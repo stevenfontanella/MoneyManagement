@@ -23,7 +23,11 @@ def generate(n, categories, summaries):
 
 if __name__ == "__main__":
     data = pd.read_csv("data.csv")
+
+    # remove missing
     data = data[data.Price.notna()]
+    # remove outlier
+    data = data[data["Other"] != "extreme outlier"]
 
     groups = data.groupby("Category")
 
