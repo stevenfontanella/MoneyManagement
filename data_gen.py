@@ -2,11 +2,17 @@ import pandas as pd
 from sys import exit
 from collections import namedtuple
 import numpy as np
+from math import ceil, sin, pi
+import matplotlib.pyplot as plt
 
 from keras.layers import LSTM, Dense
 from keras.optimizers import Adam
 from sklearn.preprocessing import OneHotEncoder
 
+# day of the year -> spending multiplier
+season = lambda x: 1 + .1 * sin(2*pi*x/365)
+
+# number of people who entered data into the csv
 NUM_PEOPLE = 3
 
 # frequency - average days per transaction of this type
@@ -17,16 +23,20 @@ summary = namedtuple("summary", ("mean", "var", "frequency"))
 
 def sample_from_cat(category, summary):
     mean, var, freq = summary
-    to_wait = round(np.random.exponential(freq))
+    to_wait = ceil(np.random.exponential(freq))
     return pd.Series({"Price": np.random.exponential(mean), "Date": to_wait})
 
-def generate(n, categories, summaries):
+def generate(n, categories, summaries, start_date):
     cats = categories.sample(n, replace=True)
     cats.reset_index(inplace=True, drop=True)
 
     df = pd.DataFrame({"Category": cats})
     newcols = df.Category.apply(lambda category: sample_from_cat(category, summaries[category]))
     df = pd.concat((df, newcols), axis=1)
+
+    datecol = start_date + pd.to_timedelta(df.Date.cumsum(), unit='d')
+    print(datecol)
+    df.Date = datecol
 
     return df
 
@@ -37,6 +47,7 @@ def try2(data):
 
 
 if __name__ == "__main__":
+    np.random.seed(10)
     data = pd.read_csv("data.csv")
 
     # remove missing
@@ -44,17 +55,6 @@ if __name__ == "__main__":
     # remove outlier
     data = data[data["Other"] != "extreme outlier"]
     data = data[["Category", "Price"]]
-
-    data = data.join(pd.get_dummies(data.Category))
-    data.drop("Category", 1, inplace=True)
-    print(data.head())
-    # print(pd.get_dummies(data.Category))
-    exit()
-
-    print(data.head())
-
-    try2(data)
-    exit()
 
     groups = data.groupby("Category")
 
@@ -68,7 +68,13 @@ if __name__ == "__main__":
 
         summaries[cat] = summary(m, var, freq)
 
-    pd.options.display.float_format = '${:,.2f}'.format
-    d = generate(100, data.Category, summaries)
-    print(d)
-    # d.to_csv("sample_data.csv")
+    d = generate(1000, data.Category, summaries, pd.to_datetime("9/12/2019"))
+    mults = d.Date.apply(lambda d: season(d.dayofyear), 1)
+    print(mults)
+    d.Price *= d.Date.apply(lambda d: season(d.dayofyear), 1)
+
+    s = d.to_string(formatters={"Price": "${:,.2f}".format})
+    print(s)
+    d.plot(x="Date", y="Price")
+    plt.show()
+    d.to_csv("sample_data.csv")
