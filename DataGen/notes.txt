@@ -1,0 +1,5 @@
+spending habits, spending by category
+future spending prediction
+alerts for higher than normal spending in some category
+
+budget is based off previous spending
