@@ -29,6 +29,7 @@ def register_blueprints(app):
     app.register_blueprint(controllers.home.blueprint)
     app.register_blueprint(controllers.auth.blueprint)
     app.register_blueprint(controllers.tutorial.blueprint)
+    app.register_blueprint(controllers.transactions.blueprint)
     return None
 
 def register_errorhandlers(app):
