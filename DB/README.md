@@ -1,8 +1,8 @@
 ## Database
 
-1. `pip install -r requirements.txt`
-
 1. Install postgres. Instructions [here](https://pgdash.io/blog/postgres-11-getting-started.html)
+
+1. `pip install -r requirements.txt`
 
 1. Change user to the postgres user and create a new db owned by a new user
   
