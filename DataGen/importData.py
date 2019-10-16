@@ -17,9 +17,9 @@ def readFile(file):
 
         }
     
-    conn = None
-    vendor_id = None
-    try:
+     conn = None
+     vendor_id = None
+     try:
         
         # connect to the PostgreSQL database
         conn = psycopg2.connect("host=localhost dbname=moneymanagement user=test")
@@ -40,13 +40,13 @@ def readFile(file):
            item = (tid,userID,category,amount,date,name,location)
            
            cur.execute("INSERT INTO transactions VALUES (%s, %s, %s, %s, %s, %s, %s)",item)
-           print(item)
-            
+           
+        conn.commit()     
         
         
-    except (Exception, psycopg2.DatabaseError) as error:
+     except (Exception, psycopg2.DatabaseError) as error:
        print(error)
-    finally:
+     finally:
         if conn is not None:
             conn.close()
 
