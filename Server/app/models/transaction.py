@@ -41,6 +41,9 @@ class Transaction(db.Model):
     vendorName = db.Column(db.String(64), nullable=False)
     vendorLocation = db.Column(db.String(64), nullable=False)
 
+    user = db.relationship("User", foreign_keys="Transaction.userID")
+    cat = db.relationship("Category", foreign_keys="Transaction.category")
+
     def __init__(self, userID, category, amount, date, vendorName, vendorLocation):
         self.userID = userID
         self.category = category
@@ -55,8 +58,8 @@ class Transaction(db.Model):
     def serialize(self):
         return {
             'id': self.id,
-            'userID': self.userID,
-            'category': self.category,
+            'user': self.user.serialize(),
+            'category': self.cat.category,
             'amount':self.amount,
             'date':self.date,
             'vendorName':self.vendorName,
