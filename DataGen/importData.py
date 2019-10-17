@@ -22,13 +22,17 @@ def readFile(file):
      try:
         
         # connect to the PostgreSQL database
-        conn = psycopg2.connect("host=localhost dbname=moneymanagement user=test")
+        conn = psycopg2.connect("host=localhost dbname=moneymanagement user=c1user password=c1user")
         # create a new cursor
         cur = conn.cursor()
         readCSV = csv.reader(file, delimiter=',')
         next(readCSV)
+	id = None
+        cur.execute("INSERT INTO users VALUES (%s, %s, %s, %s, %s) RETURNING id",(1,"Test","person","12345","test@test.com"))
+	for key in cats: 	
+		cur.execute("INSERT INTO categories VALUES (%s,%s)",(cats[key],key))
         
-        for row in readCSV:
+	for row in readCSV:
            
            tid = row[0] 
            category = cats[row[1]]
@@ -53,4 +57,3 @@ def readFile(file):
 readFrom = 'sample_output.csv'
 csvFile = open(readFrom)
 readFile(csvFile)
-
