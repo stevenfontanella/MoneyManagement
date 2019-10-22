@@ -39,9 +39,9 @@ def readFile(file):
            amount = row[2]
            date = row[3]
            userID = 1
-           name = "placeholder"
-           location = "placeholder"
-           item = (tid,userID,category,amount,date,name,location)
+           name = row[4]
+           location = row[5]
+	   item = (tid,userID,category,amount,date,name,location)
            
            cur.execute("INSERT INTO transactions VALUES (%s, %s, %s, %s, %s, %s, %s)",item)
            
