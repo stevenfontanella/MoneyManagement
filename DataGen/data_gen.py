@@ -4,10 +4,11 @@ from collections import namedtuple
 import numpy as np
 from math import ceil, sin, pi
 import matplotlib.pyplot as plt
+import random
 
-from keras.layers import LSTM, Dense
-from keras.optimizers import Adam
-from sklearn.preprocessing import OneHotEncoder
+#from keras.layers import LSTM, Dense
+#from keras.optimizers import Adam
+#from sklearn.preprocessing import OneHotEncoder
 
 # day of the year -> spending multiplier
 season = lambda x: 1 + .1 * sin(2*pi*x/365)
@@ -18,13 +19,46 @@ NUM_PEOPLE = 3
 # frequency - average days per transaction of this type
 summary = namedtuple("summary", ("mean", "var", "frequency"))
 
+myDict = {
+          "Grocery": ["Weis","Wegmans","Target","Walmart"],
+          "Merchandise": ["Walmart","Target","Amazon"],
+          "Other": ["Walmart","Amazon","Target","Bookstore"],
+          "Entertainment":["Amazon","Steam","Walmart","TicketMaster","Stubhub"],
+          "Dining" : ["McDonalds","UberEats","Taco Bell"],
+          "Travel" : ["Southwest","Enterprise"],
+          "Gas/Automotive" : ["Exxon","Sheetz"],
+          "Insurance" : ["AAA","Allstate"],
+          "Clothing" : ["Mclanahan's"]
+        }
+locations = {
+        "Walmart": ["North Atherton","Benner Pike"],
+        "Target": ["Colonnade Blvd","Beaver Ave"],
+        "Weis": ["Westerly Pkwy","Martin St","Rolling Ridge"],
+        "Wegmans": ["Colonnade Blvd"],
+        "Amazon": ["Internet"],
+        "Bookstore": ["College Ave"],
+        "TicketMaster": ["Internet"],
+        "Steam": ["Internet"],
+        "Stubhub": ["Internet"],
+        "McDonalds": ["College Ave","N Atherton","S Atherton"],
+        "Taco Bell": ["College Ave","Rolling Ridge Dr"],
+        "Southwest": ["Internet"],
+        "Enterprise": ["Blue Course Dr"],
+        "Exxon": ["N Atherton","S Allen St","W Aaron Drive","W College Ave"],
+        "Sheetz": ["S Pugh St","N Atherton","Southridge Plaza","Colonnade Blvd"],
+        "UberEats": ["Internet"],
+        "AAA": ["Internet"],
+        "Allstate": ["Internet"],
+        "Mclanahan's": ["College Ave"]        
+        }
 # TODO: put this into a class
 # initialization should create the summaries and possibly category counts to sample from
 
 def sample_from_cat(category, summary):
     mean, var, freq = summary
     to_wait = ceil(np.random.exponential(freq))
-    return pd.Series({"Price": np.random.exponential(mean), "Date": to_wait})
+    name = random.choice(myDict[category])
+    return pd.Series({"Price": np.random.exponential(mean), "Date": to_wait,"Name": name, "Location": random.choice(locations[name])})
 
 def generate(n, categories, summaries, start_date):
     cats = categories.sample(n, replace=True)
