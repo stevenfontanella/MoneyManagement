@@ -3,7 +3,8 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 30vmin;
+  align-items: center;
 }
 
 .App-header {
@@ -17,6 +18,18 @@
   color: black;
 }
 
+.App-status-bar {
+  background-color: #ffff00;
+  height: 10vmin;
+  width: 100vmin;
+}
+
 .App-link {
   color: #ad2020;
+}
+
+.App-data-table {
+  height: 60min;
+  width: 100vmin;
+  padding: 10px;
 }

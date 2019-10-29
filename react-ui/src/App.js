@@ -1,16 +1,9 @@
 import React from 'react';
-import logo from './logo.svg';
+import logo from './capital-one-logo2.png';
 import './App.css';
 import tableData from './data.json';
-import { VictoryBar } from 'victory';
+import { VictoryStack, VictoryArea } from 'victory';
 import { JsonToTable } from "react-json-to-table";
-
-const data = [
-  {quarter: 1, earnings: 13000},
-  {quarter: 2, earnings: 16500},
-  {quarter: 3, earnings: 14250},
-  {quarter: 4, earnings: 19000}
-];
 
 function App() {
   return (
@@ -18,26 +11,24 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <h1>
-          Capital One Money Management
+          Money Management
         </h1>
-        <p>
-          HELLO WORLD
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <VictoryBar
-          data={data}
-          // data accessor for x values
-          x="quarter"
-          // data accessor for y values
-          y="earnings"
-        />
+        <div className="App-status-bar">
+          <p>CAUTION: Near Monthly Limit</p>
+        </div>
+        <div className="App-data-table">
+          <VictoryStack>
+            <VictoryArea
+              data={[{x: "a", y: 2}, {x: "b", y: 3}, {x: "c", y: 5}]}
+            />
+            <VictoryArea
+              data={[{x: "a", y: 1}, {x: "b", y: 4}, {x: "c", y: 5}]}
+            />
+            <VictoryArea
+              data={[{x: "a", y: 3}, {x: "b", y: 2}, {x: "c", y: 6}]}
+            />
+          </VictoryStack>
+        </div>
         <JsonToTable json={tableData} />
       </header>
     </div>
