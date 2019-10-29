@@ -62,3 +62,20 @@ def get_month(month, year):
 
     trans = Transaction.query.filter(Transaction.date>=start).filter(end>=Transaction.date)
     return jsonify(list(map(Transaction.serialize, trans)))
+    
+@blueprint.route("/get_cat_<int:cat_id>_for_<int:month>-<int:year>")
+def get_cat_for_month(cat_id, month, year):
+    if not(1<=month<=12 and 1<=cat_id<=9 and year>=0):
+        return
+
+    start = date(year=year,month=month,day=1)
+    if (month==2):
+        day = 28
+    elif (month in {4,6,9,11}):
+        day = 30
+    else:
+        day = 31
+    end = date(year=year,month=month,day=day)
+
+    trans = Transaction.query.filter(Transaction.date>=start).filter(end>=Transaction.date).filter(Transaction.category==cat_id)
+    return jsonify(list(map(Transaction.serialize, trans)))
