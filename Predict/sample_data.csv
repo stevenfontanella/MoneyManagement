@@ -1,0 +1,1001 @@
+,Category,Price,Date,Name,Location
+0,Grocery,21.656178835120347,2019-09-13,Walmart,North Atherton
+1,Merchandise,27.371681444516028,2019-09-14,Walmart,Benner Pike
+2,Other,32.4996156014513,2019-09-15,Walmart,North Atherton
+3,Entertainment,40.35834881017884,2019-09-17,Stubhub,Internet
+4,Grocery,43.03069292618837,2019-09-18,Wegmans,Colonnade Blvd
+5,Grocery,18.969909172220014,2019-09-19,Wegmans,Colonnade Blvd
+6,Grocery,13.252497845564683,2019-09-20,Walmart,North Atherton
+7,Grocery,2.7691049758959614,2019-09-21,Walmart,North Atherton
+8,Grocery,53.18332839140721,2019-09-22,Target,Beaver Ave
+9,Dining,13.747936959201066,2019-09-23,Taco Bell,College Ave
+10,Dining,7.748749897025806,2019-09-24,Taco Bell,Rolling Ridge Dr
+11,Grocery,58.38023376349158,2019-09-25,Target,Beaver Ave
+12,Dining,31.875691509028172,2019-09-26,Taco Bell,Rolling Ridge Dr
+13,Entertainment,63.153351868073095,2019-09-27,Walmart,Benner Pike
+14,Dining,11.800780572180056,2019-09-28,Taco Bell,Rolling Ridge Dr
+15,Dining,1.9269832361241717,2019-09-29,Taco Bell,Rolling Ridge Dr
+16,Grocery,5.959145740899092,2019-09-30,Walmart,North Atherton
+17,Grocery,1.7424876102706812,2019-10-01,Weis,Westerly Pkwy
+18,Grocery,5.8967511460225674,2019-10-02,Weis,Westerly Pkwy
+19,Dining,23.196461262870145,2019-10-03,McDonalds,College Ave
+20,Grocery,32.349151273220414,2019-10-04,Target,Colonnade Blvd
+21,Dining,20.596055349310877,2019-10-05,Taco Bell,College Ave
+22,Grocery,4.6694330492681315,2019-10-06,Weis,Westerly Pkwy
+23,Travel,30.330870851006992,2019-10-09,Southwest,Internet
+24,Grocery,16.309106409459833,2019-10-10,Wegmans,Colonnade Blvd
+25,Dining,5.497638316599699,2019-10-11,UberEats,Internet
+26,Travel,5.765381609448207,2019-10-12,Enterprise,Blue Course Dr
+27,Dining,21.485396921064726,2019-10-13,McDonalds,College Ave
+28,Dining,11.717277545828459,2019-10-14,McDonalds,College Ave
+29,Gas/Automotive,20.217583993299797,2019-10-16,Exxon,W Aaron Drive
+30,Grocery,10.833668881054102,2019-10-17,Weis,Rolling Ridge
+31,Dining,0.5888109776278928,2019-10-18,Taco Bell,Rolling Ridge Dr
+32,Grocery,8.06557997944162,2019-10-19,Target,Beaver Ave
+33,Grocery,0.7032240223275247,2019-10-20,Target,Beaver Ave
+34,Grocery,10.156640024631361,2019-10-21,Walmart,North Atherton
+35,Grocery,21.351379293162452,2019-10-22,Target,Colonnade Blvd
+36,Other,107.46880294842728,2019-10-23,Bookstore,College Ave
+37,Dining,20.297721665237464,2019-10-24,UberEats,Internet
+38,Dining,11.831616892601737,2019-10-25,Taco Bell,College Ave
+39,Entertainment,3.9719856860703455,2019-10-26,Steam,Internet
+40,Entertainment,47.385156086020224,2019-10-27,Amazon,Internet
+41,Dining,1.5336083055293737,2019-10-28,Taco Bell,Rolling Ridge Dr
+42,Grocery,16.949392231953706,2019-10-29,Target,Beaver Ave
+43,Grocery,107.68829791374253,2019-10-30,Weis,Rolling Ridge
+44,Entertainment,1.5628470407416872,2019-11-01,Walmart,Benner Pike
+45,Merchandise,11.492874799003706,2019-11-03,Target,Beaver Ave
+46,Insurance,25.20149223669956,2019-11-04,AAA,Internet
+47,Entertainment,37.60483222482332,2019-11-05,Steam,Internet
+48,Grocery,11.426428472321817,2019-11-06,Weis,Westerly Pkwy
+49,Grocery,7.7893648542988885,2019-11-07,Wegmans,Colonnade Blvd
+50,Merchandise,11.043550245748033,2019-11-08,Target,Beaver Ave
+51,Dining,20.57719981866758,2019-11-09,McDonalds,S Atherton
+52,Grocery,4.072518129305016,2019-11-10,Target,Colonnade Blvd
+53,Dining,1.0727804007844308,2019-11-11,UberEats,Internet
+54,Grocery,19.28311359250362,2019-11-12,Weis,Martin St
+55,Other,18.59185053447099,2019-11-13,Target,Beaver Ave
+56,Other,162.42256114368593,2019-11-14,Target,Colonnade Blvd
+57,Other,123.90119209887065,2019-11-15,Amazon,Internet
+58,Grocery,0.0019228417628322425,2019-11-16,Wegmans,Colonnade Blvd
+59,Grocery,7.726851084163601,2019-11-17,Walmart,North Atherton
+60,Dining,6.496578288192138,2019-11-18,UberEats,Internet
+61,Other,161.33149869634275,2019-11-19,Bookstore,College Ave
+62,Grocery,1.8795228459922495,2019-11-20,Wegmans,Colonnade Blvd
+63,Other,24.732110314050875,2019-11-21,Target,Colonnade Blvd
+64,Dining,11.424619783678885,2019-11-22,Taco Bell,College Ave
+65,Grocery,0.9645204446709529,2019-11-23,Walmart,North Atherton
+66,Grocery,15.08674654609966,2019-11-24,Wegmans,Colonnade Blvd
+67,Dining,5.788978410909453,2019-11-25,McDonalds,S Atherton
+68,Grocery,10.67981008498602,2019-11-26,Target,Beaver Ave
+69,Grocery,0.9549496310391876,2019-11-27,Wegmans,Colonnade Blvd
+70,Dining,24.307442369657114,2019-11-28,Taco Bell,Rolling Ridge Dr
+71,Dining,13.217305517652532,2019-11-29,Taco Bell,College Ave
+72,Other,36.92832786046749,2019-11-30,Target,Beaver Ave
+73,Gas/Automotive,24.189239206896342,2019-12-01,Sheetz,S Pugh St
+74,Other,8.702861819526388,2019-12-02,Walmart,Benner Pike
+75,Other,33.286774188524205,2019-12-03,Target,Colonnade Blvd
+76,Entertainment,27.421756139869895,2019-12-04,Walmart,Benner Pike
+77,Grocery,52.95300600643288,2019-12-05,Weis,Westerly Pkwy
+78,Grocery,7.957319796559741,2019-12-06,Target,Colonnade Blvd
+79,Entertainment,241.71213894833673,2019-12-07,Walmart,North Atherton
+80,Entertainment,29.791927162553183,2019-12-08,Stubhub,Internet
+81,Merchandise,4.612244867603904,2019-12-10,Target,Beaver Ave
+82,Grocery,1.34180292475512,2019-12-11,Target,Colonnade Blvd
+83,Entertainment,133.02961316233336,2019-12-12,Walmart,North Atherton
+84,Other,16.227635130265142,2019-12-13,Walmart,North Atherton
+85,Dining,5.406974321092289,2019-12-14,McDonalds,College Ave
+86,Dining,19.571121868137343,2019-12-15,UberEats,Internet
+87,Grocery,32.60127164396939,2019-12-16,Walmart,Benner Pike
+88,Other,61.95046130903987,2019-12-17,Bookstore,College Ave
+89,Dining,8.26921504064942,2019-12-18,Taco Bell,College Ave
+90,Dining,3.5918755606568507,2019-12-19,UberEats,Internet
+91,Grocery,4.301504255636328,2019-12-20,Wegmans,Colonnade Blvd
+92,Grocery,9.426219378066278,2019-12-21,Walmart,North Atherton
+93,Grocery,64.95780907888312,2019-12-22,Target,Colonnade Blvd
+94,Grocery,1.8323320217892187,2019-12-23,Target,Beaver Ave
+95,Grocery,10.727013556433084,2019-12-24,Weis,Rolling Ridge
+96,Dining,6.376027701384548,2019-12-25,UberEats,Internet
+97,Entertainment,13.185713620472768,2019-12-26,Steam,Internet
+98,Grocery,1.7288307095756217,2019-12-27,Weis,Martin St
+99,Gas/Automotive,7.767866957121609,2019-12-29,Exxon,W College Ave
+100,Dining,29.563212431869214,2019-12-30,McDonalds,College Ave
+101,Grocery,1.573032963861022,2019-12-31,Weis,Martin St
+102,Grocery,15.969630381135728,2020-01-01,Weis,Rolling Ridge
+103,Dining,3.4169000416634625,2020-01-02,UberEats,Internet
+104,Grocery,6.204525447153352,2020-01-03,Weis,Martin St
+105,Clothing,19.813708684581353,2020-01-08,Mclanahan's,College Ave
+106,Grocery,63.8439304335499,2020-01-09,Wegmans,Colonnade Blvd
+107,Grocery,3.914638847264821,2020-01-10,Target,Beaver Ave
+108,Entertainment,20.406158370420048,2020-01-11,Amazon,Internet
+109,Clothing,31.276083083256037,2020-01-13,Mclanahan's,College Ave
+110,Other,227.58681956928854,2020-01-14,Amazon,Internet
+111,Grocery,8.96337176190454,2020-01-15,Wegmans,Colonnade Blvd
+112,Grocery,18.709520194483268,2020-01-16,Walmart,North Atherton
+113,Grocery,6.916644579332533,2020-01-17,Weis,Martin St
+114,Entertainment,4.891633740944473,2020-01-18,Amazon,Internet
+115,Dining,22.140077864081775,2020-01-19,Taco Bell,College Ave
+116,Other,50.07477378757954,2020-01-20,Amazon,Internet
+117,Grocery,24.85082299490552,2020-01-21,Weis,Martin St
+118,Merchandise,0.39439900009186746,2020-01-22,Walmart,Benner Pike
+119,Entertainment,98.74340725221613,2020-01-23,Walmart,North Atherton
+120,Grocery,26.155391197854467,2020-01-24,Target,Beaver Ave
+121,Other,53.538789144355235,2020-01-25,Amazon,Internet
+122,Other,164.40410277771215,2020-01-26,Target,Colonnade Blvd
+123,Dining,19.11721394693883,2020-01-27,Taco Bell,Rolling Ridge Dr
+124,Grocery,17.480807018226756,2020-01-28,Target,Colonnade Blvd
+125,Insurance,406.93071581873073,2020-01-29,Allstate,Internet
+126,Grocery,33.25113655839099,2020-01-30,Walmart,Benner Pike
+127,Dining,48.9385854165498,2020-01-31,Taco Bell,College Ave
+128,Dining,1.8494703740837395,2020-02-01,UberEats,Internet
+129,Dining,24.29176055800491,2020-02-02,McDonalds,N Atherton
+130,Grocery,42.76660039212887,2020-02-03,Wegmans,Colonnade Blvd
+131,Grocery,70.21731990091841,2020-02-04,Weis,Westerly Pkwy
+132,Other,98.83185304132812,2020-02-05,Bookstore,College Ave
+133,Dining,32.84022238749538,2020-02-06,UberEats,Internet
+134,Grocery,6.04539126030075,2020-02-07,Weis,Westerly Pkwy
+135,Dining,6.0215631057012144,2020-02-08,Taco Bell,Rolling Ridge Dr
+136,Grocery,17.314842524945426,2020-02-09,Walmart,Benner Pike
+137,Grocery,7.587754828018736,2020-02-10,Target,Beaver Ave
+138,Grocery,41.948956998262986,2020-02-11,Wegmans,Colonnade Blvd
+139,Dining,13.527149750796355,2020-02-12,UberEats,Internet
+140,Grocery,6.159813614601096,2020-02-13,Walmart,Benner Pike
+141,Clothing,111.23247813970185,2020-02-17,Mclanahan's,College Ave
+142,Travel,5.135698791085935,2020-02-21,Enterprise,Blue Course Dr
+143,Merchandise,22.880940206043533,2020-02-22,Amazon,Internet
+144,Grocery,8.624625905250706,2020-02-23,Walmart,Benner Pike
+145,Clothing,96.24047658506227,2020-02-24,Mclanahan's,College Ave
+146,Grocery,3.607124583064268,2020-02-25,Walmart,North Atherton
+147,Dining,11.31525974035126,2020-02-26,UberEats,Internet
+148,Grocery,7.941180159159463,2020-02-27,Weis,Rolling Ridge
+149,Gas/Automotive,93.22312407714455,2020-03-01,Sheetz,N Atherton
+150,Dining,6.767681205111577,2020-03-02,UberEats,Internet
+151,Entertainment,36.64886436542468,2020-03-03,Steam,Internet
+152,Grocery,2.978118843460338,2020-03-04,Walmart,North Atherton
+153,Dining,1.8556618359850676,2020-03-05,McDonalds,N Atherton
+154,Gas/Automotive,30.795295269333003,2020-03-06,Exxon,S Allen St
+155,Grocery,35.71949312406689,2020-03-07,Target,Beaver Ave
+156,Dining,62.627251704621884,2020-03-08,McDonalds,N Atherton
+157,Merchandise,50.49496037643132,2020-03-09,Target,Colonnade Blvd
+158,Dining,1.954076170322016,2020-03-10,McDonalds,N Atherton
+159,Dining,0.1136650422988476,2020-03-11,UberEats,Internet
+160,Dining,20.47842809241571,2020-03-12,Taco Bell,Rolling Ridge Dr
+161,Entertainment,41.36517563160703,2020-03-13,Amazon,Internet
+162,Grocery,84.56994928595634,2020-03-14,Wegmans,Colonnade Blvd
+163,Dining,14.243519810113014,2020-03-15,UberEats,Internet
+164,Dining,10.16721378401186,2020-03-16,McDonalds,N Atherton
+165,Grocery,11.999491092615498,2020-03-17,Target,Beaver Ave
+166,Entertainment,88.5516491765361,2020-03-18,Steam,Internet
+167,Gas/Automotive,10.387805836669287,2020-03-19,Sheetz,S Pugh St
+168,Dining,53.17274740383582,2020-03-20,McDonalds,College Ave
+169,Dining,39.98417841564449,2020-03-21,UberEats,Internet
+170,Other,31.584015451983156,2020-03-22,Target,Colonnade Blvd
+171,Dining,25.608720819798034,2020-03-23,UberEats,Internet
+172,Dining,49.51995964935595,2020-03-24,McDonalds,N Atherton
+173,Dining,7.187598780107656,2020-03-25,Taco Bell,College Ave
+174,Other,334.86027087409076,2020-03-27,Bookstore,College Ave
+175,Dining,2.144284487907779,2020-03-28,McDonalds,S Atherton
+176,Other,249.45772457824947,2020-03-29,Bookstore,College Ave
+177,Other,57.934046021158,2020-03-30,Target,Colonnade Blvd
+178,Entertainment,37.28991797060965,2020-03-31,TicketMaster,Internet
+179,Entertainment,66.45937861236261,2020-04-01,Walmart,North Atherton
+180,Entertainment,242.8576133900228,2020-04-02,Steam,Internet
+181,Grocery,25.271003769928573,2020-04-03,Weis,Westerly Pkwy
+182,Clothing,82.49181565873634,2020-04-04,Mclanahan's,College Ave
+183,Entertainment,60.63072210133584,2020-04-05,Steam,Internet
+184,Other,82.64071231384601,2020-04-07,Target,Beaver Ave
+185,Other,47.67186970883666,2020-04-08,Amazon,Internet
+186,Other,366.80675368255214,2020-04-09,Walmart,North Atherton
+187,Grocery,89.10368722396899,2020-04-10,Walmart,North Atherton
+188,Dining,40.91504362939223,2020-04-11,Taco Bell,Rolling Ridge Dr
+189,Grocery,13.719520007602277,2020-04-12,Walmart,North Atherton
+190,Dining,1.444998966438861,2020-04-13,Taco Bell,College Ave
+191,Grocery,5.125863287627706,2020-04-14,Wegmans,Colonnade Blvd
+192,Other,20.80102404523743,2020-04-15,Amazon,Internet
+193,Other,29.840726293839975,2020-04-16,Bookstore,College Ave
+194,Grocery,30.382387801230063,2020-04-17,Walmart,Benner Pike
+195,Dining,19.797626210954377,2020-04-18,McDonalds,N Atherton
+196,Dining,14.367636483466004,2020-04-19,McDonalds,N Atherton
+197,Other,140.28124495315762,2020-04-20,Amazon,Internet
+198,Dining,33.54786475560155,2020-04-21,Taco Bell,Rolling Ridge Dr
+199,Dining,3.531320016621905,2020-04-22,UberEats,Internet
+200,Gas/Automotive,10.61726762576517,2020-04-23,Exxon,N Atherton
+201,Grocery,27.250468917186133,2020-04-24,Target,Colonnade Blvd
+202,Dining,19.99249865072038,2020-04-25,Taco Bell,College Ave
+203,Dining,10.673451076115464,2020-04-26,UberEats,Internet
+204,Grocery,23.350123182032593,2020-04-27,Target,Colonnade Blvd
+205,Grocery,0.692452060365891,2020-04-28,Weis,Rolling Ridge
+206,Clothing,11.238980116901532,2020-04-30,Mclanahan's,College Ave
+207,Grocery,41.452171889372124,2020-05-01,Weis,Martin St
+208,Grocery,6.315405054964675,2020-05-02,Wegmans,Colonnade Blvd
+209,Entertainment,141.76930058187142,2020-05-03,TicketMaster,Internet
+210,Entertainment,12.153436987131686,2020-05-04,Walmart,North Atherton
+211,Dining,7.4585168576251775,2020-05-05,UberEats,Internet
+212,Dining,11.89430211324898,2020-05-06,Taco Bell,College Ave
+213,Grocery,4.863614791954247,2020-05-07,Weis,Martin St
+214,Dining,13.956889080000478,2020-05-08,UberEats,Internet
+215,Grocery,0.8588320140589595,2020-05-09,Target,Beaver Ave
+216,Merchandise,18.823498775434597,2020-05-10,Walmart,North Atherton
+217,Grocery,8.242799718011193,2020-05-11,Weis,Rolling Ridge
+218,Other,29.982757460750605,2020-05-12,Bookstore,College Ave
+219,Grocery,17.28093802577487,2020-05-13,Wegmans,Colonnade Blvd
+220,Dining,3.4351571026221492,2020-05-14,Taco Bell,College Ave
+221,Grocery,41.6751541663268,2020-05-15,Wegmans,Colonnade Blvd
+222,Grocery,6.275659155743514,2020-05-16,Target,Beaver Ave
+223,Grocery,1.360253225352528,2020-05-17,Walmart,North Atherton
+224,Dining,2.799266677243544,2020-05-18,UberEats,Internet
+225,Gas/Automotive,25.01795586398074,2020-05-19,Exxon,S Allen St
+226,Merchandise,10.634231198821512,2020-05-20,Walmart,Benner Pike
+227,Grocery,13.436891631131921,2020-05-21,Wegmans,Colonnade Blvd
+228,Grocery,17.7519841143993,2020-05-22,Target,Beaver Ave
+229,Dining,12.563621585950953,2020-05-23,McDonalds,College Ave
+230,Clothing,14.858135840567693,2020-05-24,Mclanahan's,College Ave
+231,Dining,13.965687073069661,2020-05-25,UberEats,Internet
+232,Dining,4.412323282502805,2020-05-26,Taco Bell,College Ave
+233,Grocery,0.5541595777784695,2020-05-27,Target,Colonnade Blvd
+234,Grocery,9.547327276295519,2020-05-28,Walmart,Benner Pike
+235,Gas/Automotive,3.9258010879563443,2020-05-29,Exxon,W Aaron Drive
+236,Dining,9.684049165098742,2020-05-30,Taco Bell,Rolling Ridge Dr
+237,Clothing,17.753395804605272,2020-06-01,Mclanahan's,College Ave
+238,Dining,1.1034234296482608,2020-06-02,McDonalds,S Atherton
+239,Grocery,68.88275366128975,2020-06-03,Weis,Martin St
+240,Other,5.947128197897073,2020-06-04,Walmart,North Atherton
+241,Dining,3.2776299193821004,2020-06-05,Taco Bell,College Ave
+242,Clothing,31.869888926521583,2020-06-06,Mclanahan's,College Ave
+243,Dining,7.845738660290642,2020-06-07,UberEats,Internet
+244,Dining,15.15033118351636,2020-06-08,UberEats,Internet
+245,Grocery,36.501823784821376,2020-06-09,Wegmans,Colonnade Blvd
+246,Grocery,7.882554421096419,2020-06-10,Wegmans,Colonnade Blvd
+247,Grocery,4.64849204010201,2020-06-11,Target,Colonnade Blvd
+248,Merchandise,17.85758504803552,2020-06-12,Amazon,Internet
+249,Dining,57.693401643961366,2020-06-13,McDonalds,S Atherton
+250,Clothing,40.11190802487943,2020-06-16,Mclanahan's,College Ave
+251,Dining,11.013343947193581,2020-06-17,McDonalds,College Ave
+252,Grocery,3.780722834635914,2020-06-18,Walmart,Benner Pike
+253,Grocery,3.9477449023942013,2020-06-19,Weis,Martin St
+254,Gas/Automotive,6.147871636608032,2020-06-20,Sheetz,Southridge Plaza
+255,Grocery,1.3893883973547647,2020-06-21,Wegmans,Colonnade Blvd
+256,Clothing,2.362134584169727,2020-06-22,Mclanahan's,College Ave
+257,Other,2.7779526479983327,2020-06-23,Bookstore,College Ave
+258,Grocery,53.26667105888003,2020-06-24,Walmart,North Atherton
+259,Other,151.00798468590557,2020-06-25,Target,Colonnade Blvd
+260,Grocery,21.843246434375367,2020-06-26,Target,Beaver Ave
+261,Grocery,78.77415903083082,2020-06-27,Wegmans,Colonnade Blvd
+262,Grocery,4.95871065560572,2020-06-28,Target,Colonnade Blvd
+263,Dining,8.228625875191117,2020-06-29,McDonalds,College Ave
+264,Entertainment,14.707934236401433,2020-06-30,Stubhub,Internet
+265,Grocery,4.989815670057736,2020-07-01,Walmart,Benner Pike
+266,Grocery,47.100169447761,2020-07-02,Target,Beaver Ave
+267,Dining,6.251938715004433,2020-07-03,McDonalds,N Atherton
+268,Dining,6.364529358758743,2020-07-04,McDonalds,S Atherton
+269,Grocery,33.16985818006242,2020-07-05,Wegmans,Colonnade Blvd
+270,Other,44.85560956410536,2020-07-06,Amazon,Internet
+271,Dining,4.523657349911445,2020-07-07,McDonalds,N Atherton
+272,Grocery,3.8449790015273355,2020-07-08,Wegmans,Colonnade Blvd
+273,Grocery,75.80963292879808,2020-07-09,Wegmans,Colonnade Blvd
+274,Other,109.67220807350132,2020-07-10,Walmart,Benner Pike
+275,Dining,58.73824713929274,2020-07-11,Taco Bell,College Ave
+276,Dining,15.42058744319056,2020-07-12,Taco Bell,College Ave
+277,Dining,9.845902276889177,2020-07-13,Taco Bell,College Ave
+278,Grocery,34.86692959805754,2020-07-14,Target,Beaver Ave
+279,Dining,1.5126728131914091,2020-07-15,Taco Bell,College Ave
+280,Grocery,9.162074651911057,2020-07-16,Walmart,Benner Pike
+281,Grocery,3.682406851487581,2020-07-17,Walmart,Benner Pike
+282,Other,290.5254330152942,2020-07-18,Walmart,Benner Pike
+283,Grocery,6.184998048842054,2020-07-19,Weis,Rolling Ridge
+284,Dining,8.266101137544597,2020-07-20,Taco Bell,College Ave
+285,Grocery,34.626828572696056,2020-07-21,Target,Beaver Ave
+286,Dining,6.1350623028474525,2020-07-22,McDonalds,N Atherton
+287,Merchandise,80.07166116136165,2020-07-23,Target,Colonnade Blvd
+288,Grocery,18.235710325025185,2020-07-24,Target,Colonnade Blvd
+289,Grocery,7.8457840645763985,2020-07-25,Walmart,North Atherton
+290,Grocery,43.236046952276276,2020-07-26,Wegmans,Colonnade Blvd
+291,Other,48.38013923503695,2020-07-27,Target,Beaver Ave
+292,Grocery,3.8277881627858092,2020-07-28,Walmart,North Atherton
+293,Grocery,10.414550027252895,2020-07-29,Walmart,Benner Pike
+294,Grocery,2.0808306676645634,2020-07-30,Walmart,North Atherton
+295,Dining,0.5374446811372584,2020-07-31,McDonalds,S Atherton
+296,Entertainment,0.34634042546785526,2020-08-01,Stubhub,Internet
+297,Other,86.88899585411153,2020-08-02,Target,Beaver Ave
+298,Grocery,26.631726112581855,2020-08-03,Target,Colonnade Blvd
+299,Dining,10.656057973114143,2020-08-04,Taco Bell,College Ave
+300,Entertainment,34.42530254974094,2020-08-05,Amazon,Internet
+301,Other,178.6199284957042,2020-08-06,Target,Colonnade Blvd
+302,Gas/Automotive,84.91662963255052,2020-08-07,Sheetz,N Atherton
+303,Grocery,9.49492426559026,2020-08-08,Wegmans,Colonnade Blvd
+304,Grocery,14.398194389860771,2020-08-09,Weis,Westerly Pkwy
+305,Dining,16.999519254713526,2020-08-10,Taco Bell,Rolling Ridge Dr
+306,Dining,19.86893847719545,2020-08-11,McDonalds,N Atherton
+307,Dining,4.227678735627748,2020-08-12,McDonalds,College Ave
+308,Dining,7.29170355862878,2020-08-13,UberEats,Internet
+309,Entertainment,48.645741662395515,2020-08-14,Stubhub,Internet
+310,Other,84.98878835210252,2020-08-15,Walmart,Benner Pike
+311,Grocery,23.23012428588677,2020-08-16,Target,Colonnade Blvd
+312,Clothing,27.910097935179742,2020-08-17,Mclanahan's,College Ave
+313,Merchandise,3.1200073329065554,2020-08-18,Target,Colonnade Blvd
+314,Travel,5.162223381999347,2020-08-19,Southwest,Internet
+315,Dining,4.277155427832147,2020-08-20,McDonalds,S Atherton
+316,Grocery,2.5698427512513273,2020-08-21,Weis,Martin St
+317,Dining,3.251873175481575,2020-08-22,UberEats,Internet
+318,Entertainment,18.494545571490654,2020-08-23,Amazon,Internet
+319,Other,72.82678099318257,2020-08-25,Bookstore,College Ave
+320,Dining,4.121276335373143,2020-08-26,UberEats,Internet
+321,Grocery,0.7955378901226712,2020-08-27,Wegmans,Colonnade Blvd
+322,Clothing,36.36797156567141,2020-08-28,Mclanahan's,College Ave
+323,Grocery,33.711746771435614,2020-08-29,Wegmans,Colonnade Blvd
+324,Entertainment,6.533699130654388,2020-08-30,Amazon,Internet
+325,Dining,13.965363323817977,2020-08-31,UberEats,Internet
+326,Grocery,5.543214099866181,2020-09-01,Wegmans,Colonnade Blvd
+327,Entertainment,13.914065171809709,2020-09-02,Walmart,Benner Pike
+328,Gas/Automotive,1.5683598497342008,2020-09-04,Exxon,S Allen St
+329,Entertainment,0.40010302811072196,2020-09-05,TicketMaster,Internet
+330,Dining,2.0835048743982783,2020-09-06,Taco Bell,Rolling Ridge Dr
+331,Grocery,27.514634597205227,2020-09-07,Walmart,Benner Pike
+332,Grocery,1.0143290920100791,2020-09-08,Walmart,North Atherton
+333,Grocery,7.649328683389754,2020-09-09,Walmart,Benner Pike
+334,Dining,53.85469004176183,2020-09-10,Taco Bell,Rolling Ridge Dr
+335,Dining,0.3295884228690855,2020-09-11,McDonalds,S Atherton
+336,Entertainment,0.10162045006994516,2020-09-12,Walmart,North Atherton
+337,Grocery,24.869483734586243,2020-09-13,Target,Colonnade Blvd
+338,Dining,5.287308721245096,2020-09-14,Taco Bell,Rolling Ridge Dr
+339,Gas/Automotive,24.843722691200668,2020-09-15,Sheetz,Colonnade Blvd
+340,Clothing,1.2118486692664288,2020-09-17,Mclanahan's,College Ave
+341,Grocery,5.015229059133867,2020-09-18,Walmart,North Atherton
+342,Gas/Automotive,59.9411482237257,2020-09-20,Sheetz,Southridge Plaza
+343,Dining,7.117893937839053,2020-09-21,UberEats,Internet
+344,Dining,14.393706604341219,2020-09-22,Taco Bell,Rolling Ridge Dr
+345,Dining,13.597447909503357,2020-09-23,Taco Bell,College Ave
+346,Grocery,0.9982246900789055,2020-09-24,Wegmans,Colonnade Blvd
+347,Clothing,112.32805987798957,2020-09-25,Mclanahan's,College Ave
+348,Other,106.61059246342467,2020-09-26,Amazon,Internet
+349,Grocery,8.703131194201976,2020-09-27,Target,Colonnade Blvd
+350,Dining,10.741071869002607,2020-09-28,McDonalds,S Atherton
+351,Grocery,46.05217506959423,2020-09-29,Weis,Westerly Pkwy
+352,Dining,13.980655042356195,2020-09-30,McDonalds,College Ave
+353,Grocery,25.19493670828679,2020-10-01,Target,Colonnade Blvd
+354,Travel,18.723004542395135,2020-10-02,Enterprise,Blue Course Dr
+355,Other,468.2445648669159,2020-10-03,Walmart,North Atherton
+356,Grocery,3.5377336981754017,2020-10-04,Walmart,Benner Pike
+357,Gas/Automotive,97.92912860153832,2020-10-06,Sheetz,Southridge Plaza
+358,Entertainment,27.35836634503942,2020-10-07,Steam,Internet
+359,Grocery,90.49654516472549,2020-10-08,Wegmans,Colonnade Blvd
+360,Dining,31.872836078094785,2020-10-09,McDonalds,S Atherton
+361,Other,17.92909411437672,2020-10-10,Target,Colonnade Blvd
+362,Grocery,26.655009333372277,2020-10-11,Target,Beaver Ave
+363,Grocery,12.866028822735892,2020-10-12,Wegmans,Colonnade Blvd
+364,Other,55.811553423647176,2020-10-13,Amazon,Internet
+365,Insurance,28.330059384017595,2020-10-22,Allstate,Internet
+366,Dining,4.8764023906932135,2020-10-23,UberEats,Internet
+367,Dining,20.294246475601412,2020-10-24,UberEats,Internet
+368,Merchandise,21.53377684445024,2020-10-27,Amazon,Internet
+369,Other,168.8725770745775,2020-10-28,Walmart,North Atherton
+370,Grocery,14.095819070616185,2020-10-29,Walmart,Benner Pike
+371,Merchandise,124.74809165072078,2020-10-31,Walmart,North Atherton
+372,Gas/Automotive,10.795633057274403,2020-11-01,Sheetz,Colonnade Blvd
+373,Grocery,17.768305701746957,2020-11-02,Wegmans,Colonnade Blvd
+374,Grocery,3.4024019122816225,2020-11-03,Target,Colonnade Blvd
+375,Dining,9.404540756665591,2020-11-04,UberEats,Internet
+376,Grocery,22.146328274782583,2020-11-05,Weis,Rolling Ridge
+377,Dining,50.59705893870925,2020-11-06,McDonalds,N Atherton
+378,Merchandise,42.54098385090942,2020-11-09,Walmart,North Atherton
+379,Grocery,12.614601366434615,2020-11-10,Weis,Westerly Pkwy
+380,Dining,7.344216149171556,2020-11-11,UberEats,Internet
+381,Gas/Automotive,24.884991649397403,2020-11-12,Sheetz,Southridge Plaza
+382,Grocery,1.8324983664956564,2020-11-13,Target,Colonnade Blvd
+383,Grocery,15.518596265906439,2020-11-14,Target,Beaver Ave
+384,Gas/Automotive,23.776520872368142,2020-11-22,Sheetz,Colonnade Blvd
+385,Grocery,0.9056224677246624,2020-11-23,Walmart,North Atherton
+386,Grocery,12.00918744151654,2020-11-24,Weis,Martin St
+387,Dining,8.03192987157076,2020-11-25,McDonalds,N Atherton
+388,Dining,2.8804406549243526,2020-11-26,UberEats,Internet
+389,Dining,2.373705737279351,2020-11-27,UberEats,Internet
+390,Dining,6.790402383669242,2020-11-28,Taco Bell,College Ave
+391,Grocery,47.24686511741791,2020-11-29,Weis,Rolling Ridge
+392,Travel,14.896999922439479,2020-12-03,Southwest,Internet
+393,Other,50.2743195696689,2020-12-04,Walmart,Benner Pike
+394,Grocery,35.332212908470645,2020-12-05,Weis,Martin St
+395,Grocery,1.6305218234430703,2020-12-06,Weis,Martin St
+396,Dining,14.554787118554387,2020-12-07,Taco Bell,College Ave
+397,Grocery,1.9701939449770802,2020-12-08,Walmart,Benner Pike
+398,Dining,15.903211737668162,2020-12-09,Taco Bell,College Ave
+399,Grocery,47.12739512092843,2020-12-10,Weis,Martin St
+400,Dining,11.77772895378914,2020-12-11,McDonalds,S Atherton
+401,Grocery,20.594096717077868,2020-12-12,Wegmans,Colonnade Blvd
+402,Other,17.83527301751856,2020-12-13,Target,Beaver Ave
+403,Grocery,3.683604953164172,2020-12-14,Walmart,North Atherton
+404,Grocery,39.86208848757684,2020-12-15,Weis,Westerly Pkwy
+405,Other,368.2972208143718,2020-12-16,Target,Beaver Ave
+406,Grocery,2.2848330297133588,2020-12-17,Weis,Rolling Ridge
+407,Clothing,78.70589574987802,2020-12-18,Mclanahan's,College Ave
+408,Entertainment,23.040738782955753,2020-12-19,Walmart,Benner Pike
+409,Dining,10.515239151973514,2020-12-20,UberEats,Internet
+410,Merchandise,69.32113521663454,2020-12-21,Amazon,Internet
+411,Dining,21.82417621366012,2020-12-22,UberEats,Internet
+412,Other,307.945765989021,2020-12-23,Bookstore,College Ave
+413,Entertainment,4.1746435341458,2020-12-25,Steam,Internet
+414,Entertainment,122.71133554061768,2020-12-27,Walmart,North Atherton
+415,Entertainment,12.289589960779125,2020-12-28,TicketMaster,Internet
+416,Grocery,12.166961499418122,2020-12-29,Target,Colonnade Blvd
+417,Grocery,4.63987249718726,2020-12-30,Target,Colonnade Blvd
+418,Dining,3.0316955659054994,2020-12-31,Taco Bell,College Ave
+419,Grocery,2.4980836057490863,2021-01-01,Wegmans,Colonnade Blvd
+420,Gas/Automotive,4.180857217153121,2021-01-02,Exxon,S Allen St
+421,Grocery,18.24305358595691,2021-01-03,Weis,Martin St
+422,Other,37.86902427936784,2021-01-04,Bookstore,College Ave
+423,Grocery,45.66140215050753,2021-01-05,Walmart,North Atherton
+424,Gas/Automotive,30.93116815605099,2021-01-06,Exxon,N Atherton
+425,Dining,26.69055447228699,2021-01-07,UberEats,Internet
+426,Gas/Automotive,4.8974330327703175,2021-01-10,Exxon,S Allen St
+427,Grocery,3.214723661061365,2021-01-11,Walmart,Benner Pike
+428,Grocery,10.378100521903058,2021-01-12,Walmart,Benner Pike
+429,Clothing,1.1844836118717066,2021-01-13,Mclanahan's,College Ave
+430,Dining,11.640791211053136,2021-01-14,McDonalds,N Atherton
+431,Grocery,51.45130955414318,2021-01-15,Weis,Westerly Pkwy
+432,Clothing,3.9300730399533417,2021-01-16,Mclanahan's,College Ave
+433,Other,61.18327939877675,2021-01-17,Amazon,Internet
+434,Grocery,24.719362394203706,2021-01-18,Walmart,North Atherton
+435,Dining,14.076431819921694,2021-01-19,UberEats,Internet
+436,Grocery,10.266411299156156,2021-01-20,Walmart,Benner Pike
+437,Other,21.466399422048635,2021-01-21,Target,Colonnade Blvd
+438,Grocery,39.63842571212803,2021-01-22,Weis,Westerly Pkwy
+439,Entertainment,60.69994010633597,2021-01-23,Walmart,Benner Pike
+440,Grocery,9.78527758486851,2021-01-24,Walmart,North Atherton
+441,Dining,3.0004793119230913,2021-01-25,UberEats,Internet
+442,Other,19.32106701744652,2021-01-26,Target,Beaver Ave
+443,Entertainment,124.17528191364804,2021-01-27,Walmart,Benner Pike
+444,Dining,7.506272729388809,2021-01-28,UberEats,Internet
+445,Grocery,9.114925377379159,2021-01-29,Target,Colonnade Blvd
+446,Dining,2.1740391536041757,2021-01-30,Taco Bell,College Ave
+447,Gas/Automotive,5.6975517084050695,2021-02-01,Exxon,S Allen St
+448,Grocery,9.341511018582699,2021-02-02,Wegmans,Colonnade Blvd
+449,Entertainment,35.95843171230521,2021-02-03,TicketMaster,Internet
+450,Grocery,9.776195697872048,2021-02-04,Walmart,Benner Pike
+451,Grocery,76.78544705913717,2021-02-05,Wegmans,Colonnade Blvd
+452,Dining,17.834307964764054,2021-02-06,UberEats,Internet
+453,Gas/Automotive,27.824568347639453,2021-02-07,Exxon,W College Ave
+454,Grocery,38.083259968231516,2021-02-08,Walmart,Benner Pike
+455,Entertainment,8.834612684995841,2021-02-09,Stubhub,Internet
+456,Other,325.73217548646727,2021-02-10,Bookstore,College Ave
+457,Grocery,29.94771954819718,2021-02-11,Walmart,Benner Pike
+458,Grocery,11.361929510272233,2021-02-12,Weis,Rolling Ridge
+459,Dining,3.6784514364486167,2021-02-13,McDonalds,S Atherton
+460,Dining,63.58555152591034,2021-02-14,Taco Bell,Rolling Ridge Dr
+461,Dining,37.76752804090376,2021-02-15,McDonalds,N Atherton
+462,Merchandise,27.99950771285845,2021-02-16,Amazon,Internet
+463,Dining,32.78985537366522,2021-02-17,McDonalds,College Ave
+464,Dining,20.913561411498463,2021-02-18,UberEats,Internet
+465,Dining,0.4861564335728511,2021-02-19,UberEats,Internet
+466,Grocery,4.337909471387326,2021-02-20,Target,Beaver Ave
+467,Clothing,67.85267142256882,2021-02-22,Mclanahan's,College Ave
+468,Clothing,6.250714256929837,2021-02-23,Mclanahan's,College Ave
+469,Grocery,39.549446872818066,2021-02-24,Walmart,Benner Pike
+470,Gas/Automotive,2.8965089085910645,2021-02-25,Exxon,S Allen St
+471,Grocery,1.860244763276379,2021-02-26,Weis,Rolling Ridge
+472,Travel,6.792178130242643,2021-03-01,Southwest,Internet
+473,Dining,14.740533010121538,2021-03-02,Taco Bell,Rolling Ridge Dr
+474,Grocery,9.190557844902356,2021-03-03,Target,Colonnade Blvd
+475,Other,110.08844651146805,2021-03-04,Walmart,Benner Pike
+476,Grocery,2.8863957364450754,2021-03-05,Weis,Westerly Pkwy
+477,Grocery,4.366556992280559,2021-03-06,Walmart,Benner Pike
+478,Grocery,3.0475842048408106,2021-03-07,Walmart,Benner Pike
+479,Gas/Automotive,6.504998805784232,2021-03-08,Exxon,W College Ave
+480,Grocery,4.875365595255231,2021-03-09,Target,Beaver Ave
+481,Dining,13.033939489284464,2021-03-10,Taco Bell,College Ave
+482,Entertainment,30.163256909165383,2021-03-11,Amazon,Internet
+483,Grocery,36.09497541268397,2021-03-12,Target,Colonnade Blvd
+484,Grocery,3.747614370702402,2021-03-13,Target,Beaver Ave
+485,Grocery,13.578720836067093,2021-03-14,Weis,Martin St
+486,Grocery,30.920220015505716,2021-03-15,Target,Colonnade Blvd
+487,Dining,4.879640793813222,2021-03-16,UberEats,Internet
+488,Dining,18.816536194625925,2021-03-17,UberEats,Internet
+489,Grocery,3.581073609487727,2021-03-18,Weis,Rolling Ridge
+490,Dining,6.218716787803211,2021-03-19,McDonalds,S Atherton
+491,Merchandise,27.687898412909657,2021-03-20,Amazon,Internet
+492,Dining,3.7777478376998537,2021-03-21,McDonalds,College Ave
+493,Grocery,2.785449284206238,2021-03-22,Target,Beaver Ave
+494,Dining,1.4106659905501113,2021-03-23,McDonalds,S Atherton
+495,Grocery,1.7565294913077656,2021-03-24,Weis,Martin St
+496,Dining,24.544376798986562,2021-03-25,UberEats,Internet
+497,Grocery,5.365914778500663,2021-03-26,Walmart,North Atherton
+498,Grocery,22.693899765150615,2021-03-27,Weis,Rolling Ridge
+499,Grocery,63.22664849635266,2021-03-28,Weis,Westerly Pkwy
+500,Dining,11.86583102280446,2021-03-29,McDonalds,College Ave
+501,Dining,5.725560993895488,2021-03-30,Taco Bell,Rolling Ridge Dr
+502,Dining,1.105260425886593,2021-03-31,Taco Bell,Rolling Ridge Dr
+503,Other,85.3491851073728,2021-04-01,Target,Beaver Ave
+504,Gas/Automotive,30.11226713319594,2021-04-02,Sheetz,N Atherton
+505,Grocery,53.43600533625925,2021-04-03,Target,Beaver Ave
+506,Grocery,5.414580396125959,2021-04-04,Target,Beaver Ave
+507,Dining,16.42431411663226,2021-04-05,Taco Bell,College Ave
+508,Entertainment,37.17237429833324,2021-04-06,Walmart,North Atherton
+509,Grocery,44.93590699201999,2021-04-07,Walmart,Benner Pike
+510,Dining,0.9085392269720381,2021-04-08,UberEats,Internet
+511,Grocery,47.39464961383201,2021-04-09,Target,Beaver Ave
+512,Grocery,13.684857788339942,2021-04-10,Target,Colonnade Blvd
+513,Grocery,5.512197585096087,2021-04-11,Walmart,Benner Pike
+514,Dining,39.77444096102699,2021-04-12,UberEats,Internet
+515,Grocery,27.108076735547012,2021-04-13,Wegmans,Colonnade Blvd
+516,Clothing,50.84164971260508,2021-04-14,Mclanahan's,College Ave
+517,Grocery,13.594775074079008,2021-04-15,Wegmans,Colonnade Blvd
+518,Gas/Automotive,57.10549353090315,2021-04-16,Exxon,W College Ave
+519,Entertainment,21.565548372830513,2021-04-17,Stubhub,Internet
+520,Clothing,22.99971890822025,2021-04-18,Mclanahan's,College Ave
+521,Entertainment,62.8326485091134,2021-04-19,Steam,Internet
+522,Dining,2.853871391087494,2021-04-20,Taco Bell,Rolling Ridge Dr
+523,Grocery,7.996702805055804,2021-04-21,Walmart,Benner Pike
+524,Grocery,24.72785178307607,2021-04-22,Walmart,North Atherton
+525,Merchandise,3.5179853591147654,2021-04-23,Target,Colonnade Blvd
+526,Entertainment,0.9976737503127256,2021-04-25,Stubhub,Internet
+527,Grocery,37.95775741847206,2021-04-26,Weis,Westerly Pkwy
+528,Dining,16.451251073766915,2021-04-27,McDonalds,N Atherton
+529,Other,12.053240898199588,2021-04-29,Walmart,North Atherton
+530,Grocery,3.3434943623286406,2021-04-30,Weis,Martin St
+531,Dining,13.89555402288269,2021-05-01,McDonalds,N Atherton
+532,Merchandise,12.206519369362043,2021-05-02,Walmart,North Atherton
+533,Other,149.20517491591025,2021-05-03,Target,Colonnade Blvd
+534,Grocery,3.672984876956467,2021-05-04,Weis,Rolling Ridge
+535,Insurance,13.968573412860867,2021-05-13,AAA,Internet
+536,Grocery,64.13020429188533,2021-05-14,Weis,Rolling Ridge
+537,Grocery,2.768369138396711,2021-05-15,Target,Beaver Ave
+538,Dining,6.436112093709588,2021-05-16,Taco Bell,College Ave
+539,Grocery,29.6826249009751,2021-05-17,Wegmans,Colonnade Blvd
+540,Gas/Automotive,141.22514703101518,2021-05-19,Sheetz,N Atherton
+541,Dining,2.552280841096701,2021-05-20,Taco Bell,College Ave
+542,Dining,0.41506229811343565,2021-05-21,Taco Bell,College Ave
+543,Grocery,1.1659805592477006,2021-05-22,Target,Colonnade Blvd
+544,Dining,12.507846151732894,2021-05-23,UberEats,Internet
+545,Entertainment,115.79629560114559,2021-05-24,Amazon,Internet
+546,Dining,34.975256190905846,2021-05-25,Taco Bell,Rolling Ridge Dr
+547,Dining,3.1497793127473623,2021-05-26,McDonalds,S Atherton
+548,Grocery,7.272254150249305,2021-05-27,Wegmans,Colonnade Blvd
+549,Gas/Automotive,58.66354239883441,2021-05-28,Sheetz,Colonnade Blvd
+550,Grocery,22.356844930654262,2021-05-29,Walmart,North Atherton
+551,Dining,10.462716087082518,2021-05-30,Taco Bell,College Ave
+552,Travel,0.5235222980157429,2021-06-01,Enterprise,Blue Course Dr
+553,Dining,13.744098986383294,2021-06-02,UberEats,Internet
+554,Dining,22.75834498398516,2021-06-03,McDonalds,S Atherton
+555,Grocery,10.638814669948571,2021-06-04,Weis,Rolling Ridge
+556,Grocery,3.759605702769334,2021-06-05,Target,Colonnade Blvd
+557,Grocery,23.30324652834973,2021-06-06,Target,Colonnade Blvd
+558,Dining,4.405028914485655,2021-06-07,Taco Bell,Rolling Ridge Dr
+559,Grocery,11.711489645552206,2021-06-08,Walmart,North Atherton
+560,Dining,45.5336363216799,2021-06-09,McDonalds,College Ave
+561,Grocery,18.493595287013022,2021-06-10,Wegmans,Colonnade Blvd
+562,Dining,3.0494880999992944,2021-06-11,Taco Bell,College Ave
+563,Grocery,11.56902042554643,2021-06-12,Walmart,Benner Pike
+564,Dining,32.46516497525409,2021-06-13,Taco Bell,College Ave
+565,Grocery,74.56547394692741,2021-06-14,Walmart,North Atherton
+566,Merchandise,55.64456008563405,2021-06-15,Amazon,Internet
+567,Grocery,36.20868466226002,2021-06-16,Walmart,North Atherton
+568,Grocery,1.7488073775125161,2021-06-17,Weis,Westerly Pkwy
+569,Grocery,14.271883991363286,2021-06-18,Walmart,Benner Pike
+570,Dining,13.671776779402958,2021-06-19,Taco Bell,Rolling Ridge Dr
+571,Dining,10.335685374394616,2021-06-20,Taco Bell,College Ave
+572,Grocery,11.311769557936882,2021-06-21,Weis,Westerly Pkwy
+573,Dining,2.3943059892982292,2021-06-22,UberEats,Internet
+574,Dining,17.441328895858046,2021-06-23,UberEats,Internet
+575,Dining,5.4356310046767575,2021-06-24,McDonalds,N Atherton
+576,Grocery,27.62574879070448,2021-06-25,Weis,Rolling Ridge
+577,Dining,3.273353769360623,2021-06-26,McDonalds,S Atherton
+578,Other,92.02909778916454,2021-06-27,Walmart,Benner Pike
+579,Other,2.8544148920925436,2021-06-28,Bookstore,College Ave
+580,Dining,19.47649386288137,2021-06-29,Taco Bell,Rolling Ridge Dr
+581,Grocery,119.56473500831501,2021-06-30,Weis,Martin St
+582,Grocery,5.3907211566592,2021-07-01,Wegmans,Colonnade Blvd
+583,Grocery,4.766282370529392,2021-07-02,Wegmans,Colonnade Blvd
+584,Dining,9.173342100382115,2021-07-03,Taco Bell,College Ave
+585,Grocery,14.943156490287514,2021-07-04,Walmart,North Atherton
+586,Grocery,10.541945231478174,2021-07-05,Target,Beaver Ave
+587,Dining,3.909522412379409,2021-07-06,Taco Bell,Rolling Ridge Dr
+588,Dining,19.42948470975864,2021-07-07,McDonalds,N Atherton
+589,Insurance,0.023437708288153628,2021-07-14,Allstate,Internet
+590,Dining,20.521876436351537,2021-07-15,McDonalds,N Atherton
+591,Grocery,88.7929309991465,2021-07-16,Weis,Westerly Pkwy
+592,Other,195.76050970068715,2021-07-17,Bookstore,College Ave
+593,Grocery,22.795002074300005,2021-07-18,Target,Beaver Ave
+594,Grocery,3.1458942992462786,2021-07-19,Wegmans,Colonnade Blvd
+595,Dining,12.975538382894973,2021-07-20,UberEats,Internet
+596,Grocery,13.1764760613029,2021-07-21,Target,Beaver Ave
+597,Dining,11.358625914724817,2021-07-22,McDonalds,College Ave
+598,Other,29.617814183966754,2021-07-23,Bookstore,College Ave
+599,Grocery,8.451878757457306,2021-07-24,Walmart,North Atherton
+600,Grocery,4.241317471495199,2021-07-25,Weis,Rolling Ridge
+601,Dining,7.773965420386434,2021-07-26,UberEats,Internet
+602,Grocery,26.64204956527278,2021-07-27,Walmart,Benner Pike
+603,Dining,17.748107837411496,2021-07-28,Taco Bell,College Ave
+604,Grocery,7.058031391980573,2021-07-29,Walmart,North Atherton
+605,Clothing,32.796085098111185,2021-07-31,Mclanahan's,College Ave
+606,Grocery,48.652711323507994,2021-08-01,Wegmans,Colonnade Blvd
+607,Grocery,9.481993003171565,2021-08-02,Walmart,Benner Pike
+608,Dining,5.049735891528935,2021-08-03,Taco Bell,Rolling Ridge Dr
+609,Grocery,44.04914750845437,2021-08-04,Weis,Martin St
+610,Gas/Automotive,52.156591203905755,2021-08-05,Exxon,S Allen St
+611,Grocery,11.569108693132838,2021-08-06,Target,Beaver Ave
+612,Dining,16.541866265541408,2021-08-07,Taco Bell,College Ave
+613,Dining,9.822391544595835,2021-08-08,Taco Bell,Rolling Ridge Dr
+614,Grocery,2.154364884632155,2021-08-09,Target,Beaver Ave
+615,Entertainment,18.02329808675363,2021-08-10,Walmart,Benner Pike
+616,Grocery,8.066080249557864,2021-08-11,Wegmans,Colonnade Blvd
+617,Gas/Automotive,54.26001503409557,2021-08-12,Sheetz,Colonnade Blvd
+618,Grocery,5.296563178290454,2021-08-13,Wegmans,Colonnade Blvd
+619,Grocery,0.33290637130105294,2021-08-14,Walmart,North Atherton
+620,Dining,9.679591387609797,2021-08-15,Taco Bell,College Ave
+621,Grocery,5.291840981461473,2021-08-16,Target,Beaver Ave
+622,Grocery,0.6524010316271559,2021-08-17,Weis,Westerly Pkwy
+623,Dining,27.307090023475638,2021-08-18,McDonalds,S Atherton
+624,Grocery,27.454620439320486,2021-08-19,Weis,Westerly Pkwy
+625,Clothing,22.834432280506345,2021-08-22,Mclanahan's,College Ave
+626,Grocery,7.965767669356597,2021-08-23,Target,Colonnade Blvd
+627,Entertainment,76.82722130164271,2021-08-24,Stubhub,Internet
+628,Grocery,1.9099793178401159,2021-08-25,Weis,Martin St
+629,Dining,19.02701429845996,2021-08-26,McDonalds,N Atherton
+630,Grocery,58.915389255605625,2021-08-27,Weis,Westerly Pkwy
+631,Travel,22.69320820629802,2021-08-28,Southwest,Internet
+632,Dining,9.763049420743116,2021-08-29,Taco Bell,Rolling Ridge Dr
+633,Entertainment,1.1948556788786129,2021-08-30,Stubhub,Internet
+634,Dining,9.459767543815031,2021-08-31,Taco Bell,Rolling Ridge Dr
+635,Dining,8.840177283048384,2021-09-01,Taco Bell,Rolling Ridge Dr
+636,Dining,29.24925117105534,2021-09-02,Taco Bell,College Ave
+637,Dining,3.893979816289471,2021-09-03,Taco Bell,College Ave
+638,Grocery,22.249525455576816,2021-09-04,Wegmans,Colonnade Blvd
+639,Dining,5.372642157004343,2021-09-05,Taco Bell,Rolling Ridge Dr
+640,Dining,7.239660431971774,2021-09-06,McDonalds,N Atherton
+641,Entertainment,19.51678701967388,2021-09-07,Walmart,North Atherton
+642,Other,15.836892363665134,2021-09-08,Bookstore,College Ave
+643,Clothing,38.2702644353467,2021-09-09,Mclanahan's,College Ave
+644,Dining,3.2075096294449543,2021-09-10,Taco Bell,Rolling Ridge Dr
+645,Grocery,12.994368169170224,2021-09-11,Weis,Martin St
+646,Dining,3.9259572739542388,2021-09-12,UberEats,Internet
+647,Entertainment,0.14549788802266492,2021-09-13,TicketMaster,Internet
+648,Travel,25.25657230845808,2021-09-15,Enterprise,Blue Course Dr
+649,Grocery,5.515819744002826,2021-09-16,Target,Colonnade Blvd
+650,Entertainment,10.000581378297085,2021-09-17,TicketMaster,Internet
+651,Grocery,8.2407134220212,2021-09-18,Weis,Westerly Pkwy
+652,Grocery,0.612515806457699,2021-09-19,Walmart,Benner Pike
+653,Grocery,33.29778288937873,2021-09-20,Target,Colonnade Blvd
+654,Grocery,41.33285792322248,2021-09-21,Target,Colonnade Blvd
+655,Dining,6.133772273222635,2021-09-22,Taco Bell,Rolling Ridge Dr
+656,Entertainment,18.89599346805439,2021-09-24,Walmart,North Atherton
+657,Merchandise,8.540774566657825,2021-09-25,Walmart,North Atherton
+658,Other,116.07800899007071,2021-09-26,Walmart,Benner Pike
+659,Grocery,1.7068606514149782,2021-09-27,Wegmans,Colonnade Blvd
+660,Other,47.213513757165956,2021-09-28,Amazon,Internet
+661,Other,54.75543868914853,2021-09-29,Target,Beaver Ave
+662,Grocery,3.0800663519294798,2021-09-30,Target,Colonnade Blvd
+663,Dining,11.770464831267722,2021-10-01,McDonalds,N Atherton
+664,Insurance,71.76843427227485,2021-10-07,AAA,Internet
+665,Dining,1.0116613242050136,2021-10-08,UberEats,Internet
+666,Other,9.831997515796624,2021-10-09,Bookstore,College Ave
+667,Grocery,12.597772304070292,2021-10-10,Target,Colonnade Blvd
+668,Grocery,9.663819358655399,2021-10-11,Walmart,Benner Pike
+669,Grocery,14.494542192586318,2021-10-12,Wegmans,Colonnade Blvd
+670,Dining,51.766370058821,2021-10-13,Taco Bell,Rolling Ridge Dr
+671,Dining,5.230948218205094,2021-10-14,Taco Bell,College Ave
+672,Dining,4.089934283254429,2021-10-15,Taco Bell,Rolling Ridge Dr
+673,Grocery,11.238752974400196,2021-10-16,Wegmans,Colonnade Blvd
+674,Clothing,19.683249957354615,2021-10-17,Mclanahan's,College Ave
+675,Clothing,61.409210636102664,2021-10-18,Mclanahan's,College Ave
+676,Grocery,3.5004195602110992,2021-10-19,Wegmans,Colonnade Blvd
+677,Grocery,29.54226670617383,2021-10-20,Wegmans,Colonnade Blvd
+678,Dining,13.017655929665343,2021-10-21,McDonalds,College Ave
+679,Grocery,6.376313964147811,2021-10-22,Walmart,North Atherton
+680,Insurance,16.909590106546087,2021-10-30,Allstate,Internet
+681,Grocery,1.5288614535331497,2021-10-31,Wegmans,Colonnade Blvd
+682,Grocery,0.38486079943588564,2021-11-01,Weis,Rolling Ridge
+683,Clothing,13.588565999064384,2021-11-02,Mclanahan's,College Ave
+684,Grocery,66.28203099526519,2021-11-03,Wegmans,Colonnade Blvd
+685,Grocery,25.331605999249984,2021-11-04,Weis,Westerly Pkwy
+686,Clothing,21.923468329880443,2021-11-05,Mclanahan's,College Ave
+687,Dining,25.25352816618204,2021-11-06,Taco Bell,Rolling Ridge Dr
+688,Grocery,18.255471646374584,2021-11-07,Wegmans,Colonnade Blvd
+689,Grocery,17.859717618868363,2021-11-08,Target,Colonnade Blvd
+690,Grocery,11.271824562459022,2021-11-09,Wegmans,Colonnade Blvd
+691,Entertainment,91.00501413196994,2021-11-10,Amazon,Internet
+692,Grocery,13.617806529867375,2021-11-11,Weis,Martin St
+693,Grocery,0.7714897680990909,2021-11-12,Weis,Westerly Pkwy
+694,Entertainment,154.6605560061297,2021-11-13,Steam,Internet
+695,Entertainment,34.496377207378046,2021-11-14,Steam,Internet
+696,Grocery,7.603762664666218,2021-11-15,Walmart,North Atherton
+697,Travel,4.291819393536141,2021-11-16,Southwest,Internet
+698,Other,398.0590610378682,2021-11-17,Walmart,North Atherton
+699,Other,29.331469602611786,2021-11-18,Amazon,Internet
+700,Grocery,1.4574307539879672,2021-11-19,Walmart,Benner Pike
+701,Clothing,96.5517828695807,2021-11-22,Mclanahan's,College Ave
+702,Grocery,7.496425077733629,2021-11-23,Walmart,Benner Pike
+703,Entertainment,29.477788435820703,2021-11-24,TicketMaster,Internet
+704,Other,320.15669663033424,2021-11-25,Bookstore,College Ave
+705,Dining,2.809064121313234,2021-11-26,UberEats,Internet
+706,Dining,7.954952263284348,2021-11-27,McDonalds,College Ave
+707,Grocery,36.616277879398226,2021-11-28,Target,Beaver Ave
+708,Travel,13.799465812543046,2021-11-29,Southwest,Internet
+709,Grocery,13.80621855484221,2021-11-30,Weis,Rolling Ridge
+710,Dining,18.878301409730568,2021-12-01,Taco Bell,College Ave
+711,Grocery,15.190806857916263,2021-12-02,Walmart,North Atherton
+712,Other,43.16354508296343,2021-12-03,Target,Colonnade Blvd
+713,Gas/Automotive,2.6364153428781543,2021-12-04,Exxon,S Allen St
+714,Grocery,37.3337626673882,2021-12-05,Wegmans,Colonnade Blvd
+715,Grocery,4.559044907161,2021-12-06,Walmart,North Atherton
+716,Grocery,14.04926050445967,2021-12-07,Target,Beaver Ave
+717,Grocery,21.07269377626616,2021-12-08,Wegmans,Colonnade Blvd
+718,Merchandise,5.680904358418828,2021-12-09,Target,Colonnade Blvd
+719,Other,447.94283080141,2021-12-10,Bookstore,College Ave
+720,Clothing,4.2436278545230826,2021-12-12,Mclanahan's,College Ave
+721,Entertainment,13.669699539662735,2021-12-13,Walmart,North Atherton
+722,Grocery,27.769682229929987,2021-12-14,Weis,Westerly Pkwy
+723,Dining,37.03780369998797,2021-12-15,UberEats,Internet
+724,Gas/Automotive,5.590975616746623,2021-12-17,Exxon,W Aaron Drive
+725,Grocery,20.57248347130367,2021-12-18,Weis,Westerly Pkwy
+726,Grocery,13.892064078265186,2021-12-19,Walmart,North Atherton
+727,Grocery,14.52494585046055,2021-12-20,Target,Colonnade Blvd
+728,Grocery,3.973734496174844,2021-12-21,Walmart,North Atherton
+729,Grocery,33.2355551833776,2021-12-22,Target,Colonnade Blvd
+730,Grocery,18.187403970532888,2021-12-23,Walmart,North Atherton
+731,Travel,0.6900787827711984,2021-12-26,Southwest,Internet
+732,Grocery,24.006378779891016,2021-12-27,Wegmans,Colonnade Blvd
+733,Dining,19.789453828121943,2021-12-28,McDonalds,N Atherton
+734,Dining,14.604192580744911,2021-12-29,Taco Bell,Rolling Ridge Dr
+735,Dining,8.334370973588245,2021-12-30,McDonalds,N Atherton
+736,Gas/Automotive,29.054477324803567,2021-12-31,Sheetz,S Pugh St
+737,Dining,13.315942668994037,2022-01-01,McDonalds,S Atherton
+738,Dining,13.196144774731327,2022-01-02,McDonalds,N Atherton
+739,Grocery,6.927446349365219,2022-01-03,Wegmans,Colonnade Blvd
+740,Grocery,8.654904388189816,2022-01-04,Walmart,North Atherton
+741,Grocery,29.068958012859188,2022-01-05,Target,Beaver Ave
+742,Entertainment,1.4376104032739594,2022-01-06,Walmart,North Atherton
+743,Dining,8.205738802550734,2022-01-07,McDonalds,N Atherton
+744,Dining,11.341508414249665,2022-01-08,McDonalds,N Atherton
+745,Travel,2.85886997817566,2022-01-09,Enterprise,Blue Course Dr
+746,Other,85.39612093976451,2022-01-10,Walmart,Benner Pike
+747,Clothing,27.347763798867387,2022-01-11,Mclanahan's,College Ave
+748,Grocery,33.95713634159367,2022-01-12,Walmart,Benner Pike
+749,Other,2.5963572350367845,2022-01-13,Target,Colonnade Blvd
+750,Other,379.18628720746773,2022-01-14,Target,Beaver Ave
+751,Other,7.038005014651645,2022-01-16,Target,Beaver Ave
+752,Grocery,14.087387016100001,2022-01-17,Weis,Martin St
+753,Grocery,1.5103999426858148,2022-01-18,Target,Beaver Ave
+754,Dining,5.281834890777079,2022-01-19,McDonalds,N Atherton
+755,Grocery,11.596573241076317,2022-01-20,Wegmans,Colonnade Blvd
+756,Travel,15.712501045254436,2022-01-23,Southwest,Internet
+757,Other,7.742541032433087,2022-01-24,Amazon,Internet
+758,Dining,0.36174455387673304,2022-01-25,UberEats,Internet
+759,Dining,7.229584334804374,2022-01-26,UberEats,Internet
+760,Entertainment,28.072381481421807,2022-01-27,TicketMaster,Internet
+761,Grocery,14.422632436739123,2022-01-28,Wegmans,Colonnade Blvd
+762,Grocery,35.27806954128899,2022-01-29,Wegmans,Colonnade Blvd
+763,Grocery,9.36807374198094,2022-01-30,Wegmans,Colonnade Blvd
+764,Dining,12.60340624233834,2022-01-31,Taco Bell,College Ave
+765,Grocery,92.22106033703413,2022-02-01,Wegmans,Colonnade Blvd
+766,Other,637.148468642352,2022-02-02,Target,Colonnade Blvd
+767,Merchandise,8.584663073478996,2022-02-05,Walmart,Benner Pike
+768,Insurance,283.72354469871897,2022-02-10,Allstate,Internet
+769,Grocery,11.713932518698513,2022-02-11,Target,Beaver Ave
+770,Merchandise,31.950622104253753,2022-02-14,Target,Colonnade Blvd
+771,Merchandise,11.028640724391282,2022-02-16,Walmart,Benner Pike
+772,Grocery,8.373606651899772,2022-02-17,Walmart,North Atherton
+773,Grocery,2.5217490846033965,2022-02-18,Wegmans,Colonnade Blvd
+774,Clothing,93.57639499816499,2022-02-19,Mclanahan's,College Ave
+775,Grocery,35.10853679012021,2022-02-20,Wegmans,Colonnade Blvd
+776,Grocery,2.1421189257263893,2022-02-21,Wegmans,Colonnade Blvd
+777,Entertainment,25.57891792042957,2022-02-22,Steam,Internet
+778,Grocery,1.6659211089507182,2022-02-23,Weis,Westerly Pkwy
+779,Dining,5.298806758845346,2022-02-24,UberEats,Internet
+780,Grocery,17.77308372741412,2022-02-25,Wegmans,Colonnade Blvd
+781,Grocery,7.647588965403373,2022-02-26,Target,Colonnade Blvd
+782,Travel,23.591596690037196,2022-02-27,Southwest,Internet
+783,Dining,6.1011437944343045,2022-02-28,Taco Bell,Rolling Ridge Dr
+784,Dining,6.783963945611451,2022-03-01,UberEats,Internet
+785,Dining,10.764778649486223,2022-03-02,Taco Bell,College Ave
+786,Other,103.77961906923251,2022-03-04,Target,Beaver Ave
+787,Dining,35.40632626252159,2022-03-05,Taco Bell,Rolling Ridge Dr
+788,Grocery,17.12321411811966,2022-03-06,Target,Beaver Ave
+789,Grocery,29.911704759869604,2022-03-07,Wegmans,Colonnade Blvd
+790,Grocery,18.741789639750134,2022-03-08,Weis,Martin St
+791,Grocery,6.72828166962563,2022-03-09,Wegmans,Colonnade Blvd
+792,Entertainment,34.92758919171658,2022-03-10,TicketMaster,Internet
+793,Dining,0.6990176499157443,2022-03-11,Taco Bell,Rolling Ridge Dr
+794,Grocery,30.109078238650525,2022-03-12,Wegmans,Colonnade Blvd
+795,Travel,8.441659846595773,2022-03-14,Enterprise,Blue Course Dr
+796,Dining,3.7447921967901623,2022-03-15,McDonalds,S Atherton
+797,Grocery,17.309373688903506,2022-03-16,Target,Beaver Ave
+798,Dining,51.497964812800696,2022-03-17,McDonalds,S Atherton
+799,Other,10.660994243477845,2022-03-18,Target,Colonnade Blvd
+800,Other,137.9910195936111,2022-03-19,Bookstore,College Ave
+801,Dining,3.861057745806559,2022-03-20,UberEats,Internet
+802,Grocery,11.582991932751764,2022-03-21,Weis,Martin St
+803,Dining,8.165670569718968,2022-03-22,Taco Bell,College Ave
+804,Grocery,7.075528710678705,2022-03-23,Wegmans,Colonnade Blvd
+805,Merchandise,16.940918620904867,2022-03-24,Walmart,North Atherton
+806,Grocery,30.68616218102064,2022-03-25,Walmart,Benner Pike
+807,Grocery,50.30971299521246,2022-03-26,Wegmans,Colonnade Blvd
+808,Entertainment,5.674712962061301,2022-03-27,Amazon,Internet
+809,Other,97.33241359017005,2022-03-28,Amazon,Internet
+810,Gas/Automotive,40.78775026746697,2022-03-29,Exxon,N Atherton
+811,Grocery,61.580351756653215,2022-03-30,Walmart,North Atherton
+812,Grocery,14.153967468188084,2022-03-31,Walmart,North Atherton
+813,Insurance,166.63502147975075,2022-04-05,Allstate,Internet
+814,Other,65.90378251771986,2022-04-06,Bookstore,College Ave
+815,Grocery,84.2967562864584,2022-04-07,Walmart,Benner Pike
+816,Dining,9.70091135950395,2022-04-08,Taco Bell,College Ave
+817,Merchandise,24.751240993039943,2022-04-09,Target,Beaver Ave
+818,Dining,57.65218539240887,2022-04-10,McDonalds,College Ave
+819,Grocery,15.171772833549142,2022-04-11,Weis,Martin St
+820,Grocery,14.379076368664908,2022-04-12,Weis,Westerly Pkwy
+821,Merchandise,3.022357211316567,2022-04-14,Amazon,Internet
+822,Gas/Automotive,23.253345767684866,2022-04-17,Exxon,N Atherton
+823,Dining,11.595498519729118,2022-04-18,McDonalds,S Atherton
+824,Grocery,10.467750698316491,2022-04-19,Wegmans,Colonnade Blvd
+825,Grocery,13.157999462299664,2022-04-20,Walmart,Benner Pike
+826,Grocery,4.724357948387858,2022-04-21,Walmart,Benner Pike
+827,Other,224.23183616549608,2022-04-22,Amazon,Internet
+828,Grocery,80.73357625326926,2022-04-23,Weis,Rolling Ridge
+829,Entertainment,7.961044747675936,2022-04-24,Stubhub,Internet
+830,Other,125.11719871950578,2022-04-25,Amazon,Internet
+831,Gas/Automotive,92.93797784381955,2022-04-26,Sheetz,N Atherton
+832,Dining,4.7229554389031,2022-04-27,McDonalds,N Atherton
+833,Gas/Automotive,58.607612483208044,2022-04-28,Exxon,N Atherton
+834,Grocery,38.49006659195393,2022-04-29,Wegmans,Colonnade Blvd
+835,Grocery,35.85372992632511,2022-04-30,Target,Colonnade Blvd
+836,Dining,8.37172018948427,2022-05-01,UberEats,Internet
+837,Gas/Automotive,14.437911362872569,2022-05-02,Sheetz,N Atherton
+838,Dining,9.456399640513554,2022-05-03,UberEats,Internet
+839,Entertainment,58.466081485484295,2022-05-04,TicketMaster,Internet
+840,Grocery,12.406749419889726,2022-05-05,Target,Beaver Ave
+841,Merchandise,0.9734786356171105,2022-05-06,Target,Colonnade Blvd
+842,Grocery,0.54813461735403,2022-05-07,Wegmans,Colonnade Blvd
+843,Dining,5.752162242047982,2022-05-08,UberEats,Internet
+844,Dining,3.3165645184619583,2022-05-09,Taco Bell,Rolling Ridge Dr
+845,Other,34.47069481473346,2022-05-10,Bookstore,College Ave
+846,Grocery,6.709695065676438,2022-05-11,Target,Beaver Ave
+847,Clothing,18.36092230775362,2022-05-12,Mclanahan's,College Ave
+848,Grocery,66.14602113820247,2022-05-13,Weis,Westerly Pkwy
+849,Dining,10.188634783650176,2022-05-14,McDonalds,N Atherton
+850,Other,4.610617657772161,2022-05-16,Bookstore,College Ave
+851,Other,83.11924114005029,2022-05-18,Target,Beaver Ave
+852,Grocery,6.327647840126859,2022-05-19,Wegmans,Colonnade Blvd
+853,Entertainment,14.22644465003492,2022-05-20,Amazon,Internet
+854,Grocery,25.4557490825482,2022-05-21,Target,Beaver Ave
+855,Dining,23.32952637888419,2022-05-22,McDonalds,S Atherton
+856,Grocery,2.7348130420736507,2022-05-23,Target,Colonnade Blvd
+857,Grocery,2.9926112005169796,2022-05-24,Wegmans,Colonnade Blvd
+858,Dining,17.23074864533441,2022-05-25,Taco Bell,Rolling Ridge Dr
+859,Dining,13.203823802325124,2022-05-26,Taco Bell,Rolling Ridge Dr
+860,Entertainment,22.399537519542093,2022-05-27,TicketMaster,Internet
+861,Dining,3.047447300563006,2022-05-28,McDonalds,S Atherton
+862,Grocery,1.7779601835301155,2022-05-29,Wegmans,Colonnade Blvd
+863,Insurance,109.50531253167502,2022-06-01,AAA,Internet
+864,Dining,10.748198250179957,2022-06-02,UberEats,Internet
+865,Grocery,4.397677458124496,2022-06-03,Walmart,North Atherton
+866,Dining,7.314487369878012,2022-06-04,Taco Bell,College Ave
+867,Grocery,0.2226667214316747,2022-06-05,Target,Beaver Ave
+868,Entertainment,66.83435131088052,2022-06-06,Steam,Internet
+869,Dining,1.1797352432846235,2022-06-07,UberEats,Internet
+870,Grocery,29.939278620178808,2022-06-08,Weis,Rolling Ridge
+871,Dining,0.1151486018572642,2022-06-09,Taco Bell,Rolling Ridge Dr
+872,Gas/Automotive,20.74079264392139,2022-06-10,Sheetz,S Pugh St
+873,Grocery,29.640509676070796,2022-06-11,Wegmans,Colonnade Blvd
+874,Dining,2.6434039598224577,2022-06-12,Taco Bell,Rolling Ridge Dr
+875,Dining,8.59764425209925,2022-06-13,UberEats,Internet
+876,Gas/Automotive,10.04308594589278,2022-06-14,Sheetz,N Atherton
+877,Grocery,31.243202125635165,2022-06-15,Walmart,North Atherton
+878,Other,113.43884901804552,2022-06-18,Target,Beaver Ave
+879,Grocery,28.67163845729377,2022-06-19,Weis,Martin St
+880,Dining,10.576781696460174,2022-06-20,UberEats,Internet
+881,Grocery,4.7378274811578125,2022-06-21,Weis,Rolling Ridge
+882,Entertainment,169.84666911594073,2022-06-23,Walmart,North Atherton
+883,Grocery,14.773653379982886,2022-06-24,Wegmans,Colonnade Blvd
+884,Grocery,34.24338262732315,2022-06-25,Walmart,Benner Pike
+885,Other,15.203561900616977,2022-06-26,Bookstore,College Ave
+886,Grocery,0.6976739158245321,2022-06-27,Weis,Westerly Pkwy
+887,Grocery,52.81343603653657,2022-06-28,Wegmans,Colonnade Blvd
+888,Grocery,5.5228007332890465,2022-06-29,Walmart,North Atherton
+889,Entertainment,50.10869840831072,2022-06-30,Stubhub,Internet
+890,Dining,12.198149530068218,2022-07-01,McDonalds,S Atherton
+891,Dining,5.432712088354295,2022-07-02,Taco Bell,College Ave
+892,Grocery,28.45361866393999,2022-07-03,Wegmans,Colonnade Blvd
+893,Dining,8.588302692398496,2022-07-04,UberEats,Internet
+894,Entertainment,30.742041333511267,2022-07-05,Amazon,Internet
+895,Clothing,4.705326657116137,2022-07-08,Mclanahan's,College Ave
+896,Grocery,72.5440981634484,2022-07-09,Walmart,North Atherton
+897,Travel,14.082720214671989,2022-07-10,Southwest,Internet
+898,Dining,27.58062729089508,2022-07-11,Taco Bell,Rolling Ridge Dr
+899,Grocery,0.5529427795138099,2022-07-12,Target,Colonnade Blvd
+900,Entertainment,1.2160743920571655,2022-07-13,Amazon,Internet
+901,Grocery,9.04405328721227,2022-07-14,Wegmans,Colonnade Blvd
+902,Grocery,1.5332960955461705,2022-07-15,Target,Colonnade Blvd
+903,Other,126.11408344191943,2022-07-16,Walmart,North Atherton
+904,Grocery,4.788795600891103,2022-07-17,Target,Colonnade Blvd
+905,Grocery,4.826023679043338,2022-07-18,Wegmans,Colonnade Blvd
+906,Dining,4.668674260529803,2022-07-19,UberEats,Internet
+907,Grocery,5.2096744933675305,2022-07-20,Walmart,North Atherton
+908,Gas/Automotive,20.934024797827835,2022-07-21,Sheetz,N Atherton
+909,Dining,0.2630802407094125,2022-07-22,Taco Bell,College Ave
+910,Grocery,26.286687367981866,2022-07-23,Wegmans,Colonnade Blvd
+911,Grocery,11.933359515247405,2022-07-24,Wegmans,Colonnade Blvd
+912,Entertainment,8.275294898252085,2022-07-25,Walmart,North Atherton
+913,Grocery,2.9611034589235268,2022-07-26,Walmart,North Atherton
+914,Dining,28.25968720955751,2022-07-27,UberEats,Internet
+915,Dining,16.824998382185882,2022-07-28,UberEats,Internet
+916,Clothing,20.38265211780075,2022-07-31,Mclanahan's,College Ave
+917,Grocery,10.480977714915678,2022-08-01,Walmart,Benner Pike
+918,Insurance,54.4941636267863,2022-08-07,AAA,Internet
+919,Dining,9.531738820867332,2022-08-08,UberEats,Internet
+920,Entertainment,36.26628628299241,2022-08-09,Amazon,Internet
+921,Dining,3.954976236511392,2022-08-10,Taco Bell,Rolling Ridge Dr
+922,Entertainment,27.283958999557505,2022-08-11,Walmart,North Atherton
+923,Grocery,8.318925797703166,2022-08-12,Wegmans,Colonnade Blvd
+924,Grocery,9.641390736939913,2022-08-13,Walmart,Benner Pike
+925,Dining,11.447066553999033,2022-08-14,UberEats,Internet
+926,Travel,5.890758043645811,2022-08-20,Southwest,Internet
+927,Grocery,60.4401238228329,2022-08-21,Wegmans,Colonnade Blvd
+928,Grocery,7.722248191017233,2022-08-22,Wegmans,Colonnade Blvd
+929,Entertainment,15.524973092261986,2022-08-23,Walmart,North Atherton
+930,Grocery,42.36131438835445,2022-08-24,Target,Beaver Ave
+931,Dining,6.260174322333082,2022-08-25,Taco Bell,Rolling Ridge Dr
+932,Dining,13.330447275782046,2022-08-26,UberEats,Internet
+933,Entertainment,6.068619126214517,2022-08-27,Amazon,Internet
+934,Other,113.74440746818257,2022-08-28,Target,Beaver Ave
+935,Travel,18.33520367282239,2022-08-29,Southwest,Internet
+936,Dining,1.5521682436473154,2022-08-30,UberEats,Internet
+937,Grocery,25.342431033787605,2022-08-31,Walmart,North Atherton
+938,Grocery,3.1899206040943326,2022-09-01,Weis,Martin St
+939,Gas/Automotive,19.577886022121994,2022-09-02,Sheetz,N Atherton
+940,Other,97.43132422634423,2022-09-03,Walmart,Benner Pike
+941,Entertainment,26.967973772623576,2022-09-04,Stubhub,Internet
+942,Dining,5.5322600429711475,2022-09-05,McDonalds,S Atherton
+943,Dining,5.070747902488006,2022-09-06,McDonalds,College Ave
+944,Dining,21.672701821267918,2022-09-07,Taco Bell,College Ave
+945,Clothing,0.5339666468489964,2022-09-08,Mclanahan's,College Ave
+946,Dining,35.40441573781307,2022-09-09,Taco Bell,College Ave
+947,Grocery,17.177845621047684,2022-09-10,Wegmans,Colonnade Blvd
+948,Other,235.7959294734668,2022-09-11,Walmart,Benner Pike
+949,Dining,19.457365782937774,2022-09-12,UberEats,Internet
+950,Grocery,7.00210161779806,2022-09-13,Walmart,Benner Pike
+951,Grocery,5.813388458525273,2022-09-14,Target,Colonnade Blvd
+952,Dining,1.9381628044698143,2022-09-15,McDonalds,N Atherton
+953,Dining,2.6087859947501975,2022-09-16,UberEats,Internet
+954,Dining,12.152049851652961,2022-09-17,McDonalds,College Ave
+955,Grocery,4.8963912387028365,2022-09-18,Walmart,Benner Pike
+956,Grocery,7.274377674011992,2022-09-19,Wegmans,Colonnade Blvd
+957,Grocery,11.077540703662818,2022-09-20,Weis,Martin St
+958,Grocery,16.50903422458031,2022-09-21,Weis,Rolling Ridge
+959,Dining,4.589348067689508,2022-09-22,McDonalds,S Atherton
+960,Dining,18.769554401576126,2022-09-23,Taco Bell,Rolling Ridge Dr
+961,Other,52.41839945156962,2022-09-24,Target,Beaver Ave
+962,Dining,8.734627047014996,2022-09-25,UberEats,Internet
+963,Grocery,6.472805976311151,2022-09-26,Target,Colonnade Blvd
+964,Gas/Automotive,33.78589261169988,2022-09-27,Exxon,W Aaron Drive
+965,Entertainment,32.819638476516865,2022-09-28,Stubhub,Internet
+966,Grocery,1.3942604915677186,2022-09-29,Target,Colonnade Blvd
+967,Dining,17.75930968982173,2022-09-30,Taco Bell,College Ave
+968,Grocery,10.232420939834247,2022-10-01,Target,Colonnade Blvd
+969,Dining,6.858995412051549,2022-10-02,Taco Bell,College Ave
+970,Other,166.20944951718107,2022-10-04,Walmart,North Atherton
+971,Grocery,2.2123068242693957,2022-10-05,Target,Colonnade Blvd
+972,Grocery,6.641717714135406,2022-10-06,Wegmans,Colonnade Blvd
+973,Gas/Automotive,34.626812219004265,2022-10-10,Exxon,W College Ave
+974,Grocery,4.405549828322915,2022-10-11,Walmart,North Atherton
+975,Other,78.72921393579482,2022-10-12,Walmart,Benner Pike
+976,Grocery,56.42635482880704,2022-10-13,Walmart,Benner Pike
+977,Grocery,29.364646421421487,2022-10-14,Walmart,Benner Pike
+978,Grocery,16.442957559165787,2022-10-15,Target,Beaver Ave
+979,Grocery,18.57095369652039,2022-10-16,Walmart,North Atherton
+980,Other,85.08287160355006,2022-10-17,Bookstore,College Ave
+981,Gas/Automotive,11.383832457270524,2022-10-19,Exxon,W College Ave
+982,Clothing,10.692371332748875,2022-10-21,Mclanahan's,College Ave
+983,Other,114.00490203174688,2022-10-22,Walmart,North Atherton
+984,Grocery,1.5223682288220899,2022-10-23,Target,Colonnade Blvd
+985,Entertainment,118.05139194182036,2022-10-24,Walmart,Benner Pike
+986,Grocery,25.08136181437504,2022-10-25,Walmart,North Atherton
+987,Grocery,23.289521529350903,2022-10-26,Walmart,Benner Pike
+988,Dining,5.683755493564474,2022-10-27,Taco Bell,Rolling Ridge Dr
+989,Grocery,15.97188538578576,2022-10-28,Target,Beaver Ave
+990,Grocery,1.4563838595903664,2022-10-29,Wegmans,Colonnade Blvd
+991,Entertainment,10.334100424380233,2022-10-30,Amazon,Internet
+992,Grocery,5.2907071354648645,2022-10-31,Wegmans,Colonnade Blvd
+993,Dining,1.9798030618078235,2022-11-01,Taco Bell,Rolling Ridge Dr
+994,Dining,16.205851427523758,2022-11-02,McDonalds,N Atherton
+995,Grocery,16.98642743985685,2022-11-03,Wegmans,Colonnade Blvd
+996,Dining,8.967753857575172,2022-11-04,UberEats,Internet
+997,Dining,29.333970800909405,2022-11-05,UberEats,Internet
+998,Entertainment,52.47769363596979,2022-11-06,Walmart,Benner Pike
+999,Grocery,7.955554647991549,2022-11-07,Walmart,North Atherton
