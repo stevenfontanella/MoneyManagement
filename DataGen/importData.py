@@ -13,41 +13,41 @@ def readFile(file):
           "Gas/Automotive" : 7,
           "Insurance" : 8,
           "Clothing" : 9
-      
+
 
         }
-    
+
      conn = None
      vendor_id = None
      try:
-        
+
         # connect to the PostgreSQL database
         conn = psycopg2.connect("host=localhost dbname=moneymanagement user=c1user password=c1user")
         # create a new cursor
         cur = conn.cursor()
         readCSV = csv.reader(file, delimiter=',')
         next(readCSV)
-	id = None
+        id = None
         cur.execute("INSERT INTO users VALUES (%s, %s, %s, %s, %s) RETURNING id",(1,"Test","person","12345","test@test.com"))
-	for key in cats: 	
-		cur.execute("INSERT INTO categories VALUES (%s,%s)",(cats[key],key))
-        
-	for row in readCSV:
-           
-           tid = row[0] 
+        for key in cats:
+             cur.execute("INSERT INTO categories VALUES (%s,%s)",(cats[key],key))
+
+        for row in readCSV:
+
+           tid = row[0]
            category = cats[row[1]]
            amount = row[2]
            date = row[3]
            userID = 1
            name = row[4]
            location = row[5]
-	   item = (tid,userID,category,amount,date,name,location)
-           
+           item = (tid,userID,category,amount,date,name,location)
+
            cur.execute("INSERT INTO transactions VALUES (%s, %s, %s, %s, %s, %s, %s)",item)
-           
-        conn.commit()     
-        
-        
+
+        conn.commit()
+
+
      except (Exception, psycopg2.DatabaseError) as error:
        print(error)
      finally:
