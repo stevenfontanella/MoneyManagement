@@ -18,8 +18,14 @@
   color: black;
 }
 
-.App-status-bar {
+.App-caution-bar {
   background-color: #ffff00;
+  height: 10vmin;
+  width: 100vmin;
+}
+
+.App-warning-bar {
+  background-color: #ff0000;
   height: 10vmin;
   width: 100vmin;
 }
