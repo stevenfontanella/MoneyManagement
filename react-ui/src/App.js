@@ -1,19 +1,21 @@
 import logo from './capital-one-logo2.png';
 import './App.css';
 //import tableData from './data.json';
-import { VictoryStack, VictoryArea } from 'victory';
-//import { VictoryBar, VictoryChart, VictoryAxis } from 'victory';
-import { JsonToTable } from "react-json-to-table";
-import React, { Component } from 'react';
-//import tableData from './data.json';
+import { VictoryStack, VictoryArea , VictoryLine, VictoryChart,VictoryLegend, VictoryAxis} from 'victory';
 
-import { MDBDataTable } from 'mdbreact';
+import React, { Component } from 'react';
+
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+
+
+import { MDBDataTable} from 'mdbreact';
 
 const API = 'http://localhost:5000/transactions';
-const DEFAULT_QUERY = '/';
-const budget = 35000
+
+
 var total = 0;
-var display = true
+var budget = 10000
 
 function sumCat(cat,arr){
 	var sum = 0;
@@ -22,16 +24,16 @@ function sumCat(cat,arr){
 	for(var i in arr){
 		if(cat == "all"){
 			sum = arr[i].amount + sum;
-			temp = { x : i, y: sum}
+			temp = { x : arr[i].date, y: sum}
 			total = sum;
 			rollingSum.push(temp);
 		}else{
 			if(cat == arr[i].category){
 				sum = arr[i].amount + sum;
-				temp = { x : i, y: sum};
+				temp = { x : arr[i].date, y: sum};
 				rollingSum.push(temp);	
 			}else{
-				temp = { x : i, y: sum};
+				temp = { x : arr[i].date, y: sum};
 				rollingSum.push(temp);			
 			}
 		}		
@@ -40,6 +42,7 @@ function sumCat(cat,arr){
 }
 
 function checkBudget(){
+	budget = total + (total*0.1)
 	if (total >= budget){
 		return(
         <div className="App-warning-bar">
@@ -55,18 +58,28 @@ function checkBudget(){
 	
 }
 
+
 class App extends Component {
   constructor(props) {
     super(props);
-	this.displays = [true,true,true,true,true,true,true,true,true]
     this.state = {
       hits: [],
+	  displays: [true,true,true,true,true,true,true,true,true],
+	  startDate: new Date(),
+	  endDate: new Date(),
 	  isLoading: false
     };
   }
   componentDidMount() {
+	const REAL_QUERY = '/get_date_range_9-15-2019_to_1-31-2020';
+	const SINGLE_QUERY = '/get_month_9-2020';
+	const VECTOR_QUERY = '/get_cats_255'
+	const ALL_QUERY = '/'
+	
+	var QUERY = '/get_date_range_' + this.state.startDate.getMonth() +'-'+ this.state.startDate.getDate() +'-'+this.state.startDate.getFullYear() + '_to_' + this.state.endDate.getMonth() +'-'+ this.state.endDate.getDate() +'-'+ this.state.endDate.getFullYear();
+	
 	this.setState({ isLoading: true });
-	var req = API + DEFAULT_QUERY; 
+	var req = API + QUERY; 
     fetch(req)
       .then(response => response.json())
       .then(data => this.setState({ hits: data , isLoading: false }));
@@ -75,31 +88,58 @@ class App extends Component {
   writeArea(cat,cond){
 	if(cond){
 	var rollingSum = sumCat(cat,this.state.hits);
-	
 	return (<VictoryArea
               data={rollingSum}
-			  labels={({ data, index }) => index == data.length - 1 ? cat : ""}
+			  labels={({ data, index }) => index == data.length - 1 ? " " : ""}
             />)		
 			}	
 	}
-	invert(){
-		var checkBox = document.getElementById("OtherBox");
-		if (checkBox.checked == true){
-			this.displays[8] = true;
-		} else {
-			this.displays[8] = false;
-		}
-	}
+	
+  invert(){
+	setInterval(this.invertHelp(),2000);
+	
+  }
+  invertHelp(){
+	//this.setState(displays[8] : this.state.displays[8]); 
+	console.log("invert called " + this.state.displays[8])
+	  
+  }
+  
+  handleChangeS = date => {
+    this.setState({
+      startDate: date
+    });
+  };
+  handleChangeE = date => {
+    this.setState({
+      endDate: date
+    });
+  };
+	
   render() {
-    var { hits, isLoading } = this.state;
+    var { hits, displays, isLoading } = this.state;
 	var cats = ["Grocery","Merchandise","Other","Entertainment","Dining","Travel","Gas/Automotive","Insurance","Clothing"]
 	
 	
 	if (isLoading) {
-      return <p>Loading...</p>;
+      return (<div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <h1>
+          Money Management
+        </h1>
+		<p>Loading Data....</p>
+		  
+		<div className="App-data-table">
+        </div>
+		
+	  </header>	  
+    
+	</div>);
 	}
 	for (var i in hits) {
         hits[i].user = "temp";
+		hits[i].date = hits[i].date.replace("00:00:00 GMT","");		
      }
 	var rollingSumAll = sumCat("all",hits);
 	var data = {
@@ -122,18 +162,18 @@ class App extends Component {
         sort: 'asc',
         width: 250
       },
-      {
-        label: 'ID',
-        field: 'id',
-        sort: 'asc',
-        width: 75
-      },
-      {
-        label: 'User',
-        field: 'user',
-        sort: 'asc',
-        width: 50
-      },
+    //  {
+    //    label: 'ID',
+    //    field: 'id',
+    //    sort: 'asc',
+    //    width: 75
+    //  },
+     // {
+     //   label: 'User',
+     //   field: 'user',
+     //   sort: 'asc',
+     //   width: 50
+     // },
       {
         label: 'Location',
         field: 'vendorLocation',
@@ -147,7 +187,7 @@ class App extends Component {
         width: 300
       }
     ],
-  rows: hits
+		rows: hits
   };
 	return (
       <div className="App">
@@ -156,24 +196,60 @@ class App extends Component {
         <h1>
           Money Management
         </h1>
-		<p>{total} {this.displays[8]}</p>
 		{checkBudget()}
-		<input type="checkbox" id="OtherBox"  onchange="this.invert()"/> Other 
-		
-		<div className="App-data-table">
-          <VictoryStack colorScale={["red","gold","green","purple","black","grey","yellow","tomato", "blue", "orange"]}>
-            {this.writeArea("Grocery",true)}
-			{this.writeArea("Merchandise",true)}
-			{this.writeArea("Entertainment",true)}
-			{this.writeArea("Dining",true)}
-			{this.writeArea("Travel",true)}
-			{this.writeArea("Gas/Automotive",true)}
-			{this.writeArea("Insurance",true)}
-			{this.writeArea("Clothing",true)}
-			{this.writeArea("Other",this.displays[8])}			
+		<p>{this.state.startDate.toString()}</p>
+		<p>{this.state.endDate.toString()}</p>
+		<input type="checkbox" id="OtherBox"  onChange={this.invert()}/> Other
+		<VictoryChart height = {500} width = {1000} domainPadding={{x: 0, y: 100}}>
+			<VictoryAxis 
+			sytle={{
+				
+				  }} 
+			fixLabelOverlap={true}/>
+			<VictoryAxis sytle={{grid:{stroke:"grey"}}} dependentAxis/>
+			<VictoryLegend x={100} y={175}
+				itemsPerRow={2}
+				orientation="horizontal"
+				gutter={20}
+				style={{ border: { stroke: "black" }, title: {fontSize: 10 } }}
+				data={[
+					{ name: "Grocery", symbol: { fill: "red" } },
+					{ name: "Merchandise", symbol: { fill: "pink" } },
+					{ name: "Entertainment", symbol: { fill: "green" } },
+					{ name: "Dining", symbol: { fill: "purple" } },
+					{ name: "Travel", symbol: { fill: "black" } },
+					{ name: "Gas/Automotive", symbol: { fill: "grey" } },
+					{ name: "Insurance", symbol: { fill: "yellow" } },
+					{ name: "Clothing", symbol: { fill: "tomato" } },
+					{ name: "Other", symbol: { fill: "blue" } }
+				]}
+			/>
+          <VictoryStack colorScale={["red","pink","green","purple","black","grey","yellow","tomato", "blue"]}>
+			{this.writeArea("Grocery",displays[0])}
+			{this.writeArea("Merchandise",displays[1])}
+			{this.writeArea("Entertainment",displays[2])}
+			{this.writeArea("Dining",displays[3])}
+			{this.writeArea("Travel",displays[4])}
+			{this.writeArea("Gas/Automotive",displays[5])}
+			{this.writeArea("Insurance",displays[6])}
+			{this.writeArea("Clothing",displays[7])}
+			{this.writeArea("Other",displays[8])}			
           </VictoryStack>
-        </div>
+		  <VictoryLine  data={[{ x: 0, y: total+(total*0.1)}, { x: 1000, y: total+(total*0.1) }, ]}/>
+		< /VictoryChart>
+		Start Date<DatePicker
+			selected={this.state.startDate}
+			onChange={this.handleChangeS}
+		/>
+		
+		End Date <DatePicker
+			selected={this.state.endDate}
+			onChange={this.handleChangeE}
+		/>
+		<div className="App-data-table">
 		<MDBDataTable striped bordered hover data={data}/>
+        </div>
+		
 	  </header>	  
     
 	</div>
