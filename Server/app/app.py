@@ -2,6 +2,7 @@ import os
 
 from flask import Flask, render_template
 from . import settings, controllers, models
+from flask_cors import CORS, cross_origin
 from .extensions import db
 
 project_dir = os.path.dirname(os.path.abspath(__file__))
