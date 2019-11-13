@@ -4,6 +4,8 @@ import './App.css';
 import { VictoryStack, VictoryArea , VictoryLine, VictoryChart,VictoryLegend, VictoryAxis} from 'victory';
 
 import React, { Component } from 'react';
+import { MDBBtn, MDBIcon, MDBBtnFixed, MDBBtnFixedItem } from "mdbreact";
+import { MDBInput } from 'mdbreact';
 
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -58,7 +60,19 @@ function checkBudget(){
 	
 }
 
-
+function updateGraph(obj){
+	 obj.setState({ isLoading: true });
+	 var QUERY = '/get_date_range_' + (obj.state.startDate.getMonth() + 1) +'-'+ obj.state.startDate.getDate() +'-'+obj.state.startDate.getFullYear() + '_to_' + (obj.state.endDate.getMonth()+1) +'-'+ obj.state.endDate.getDate() +'-'+ obj.state.endDate.getFullYear();
+	 var req = API + QUERY; 
+     console.log("update called");
+	 fetch(req)
+      .then(response => response.json())
+      .then(data => obj.setState({ hits: data, isLoading: false}));	  
+  }
+function invert(obj,index){
+	obj.state.displays[index]=!obj.state.displays[index]
+	
+  }
 class App extends Component {
   constructor(props) {
     super(props);
@@ -76,14 +90,15 @@ class App extends Component {
 	const VECTOR_QUERY = '/get_cats_255'
 	const ALL_QUERY = '/'
 	
-	var QUERY = '/get_date_range_' + this.state.startDate.getMonth() +'-'+ this.state.startDate.getDate() +'-'+this.state.startDate.getFullYear() + '_to_' + this.state.endDate.getMonth() +'-'+ this.state.endDate.getDate() +'-'+ this.state.endDate.getFullYear();
-	
 	this.setState({ isLoading: true });
-	var req = API + QUERY; 
+	var req = API + REAL_QUERY; 
     fetch(req)
       .then(response => response.json())
       .then(data => this.setState({ hits: data , isLoading: false }));
   }
+  
+  
+  
    
   writeArea(cat,cond){
 	if(cond){
@@ -95,21 +110,15 @@ class App extends Component {
 			}	
 	}
 	
-  invert(){
-	setInterval(this.invertHelp(),2000);
-	
-  }
-  invertHelp(){
-	//this.setState(displays[8] : this.state.displays[8]); 
-	console.log("invert called " + this.state.displays[8])
-	  
-  }
+  
+  
   
   handleChangeS = date => {
     this.setState({
       startDate: date
     });
   };
+  
   handleChangeE = date => {
     this.setState({
       endDate: date
@@ -122,21 +131,36 @@ class App extends Component {
 	
 	
 	if (isLoading) {
-      return (<div className="App">
+	return ( <div className="App">
+	
+	  
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <h1>
           Money Management
         </h1>
-		<p>Loading Data....</p>
-		  
-		<div className="App-data-table">
-        </div>
+		{checkBudget()}
+		
+		<MDBInput  defaultChecked onChange={() => {invert(this,8)}} type="checkbox" id="checkbox2" />Other
+		Start Date<DatePicker
+			selected={this.state.startDate}
+			onChange={this.handleChangeS}
+		/>
+		
+		End Date <DatePicker
+			selected={this.state.endDate}
+			onChange={this.handleChangeE}
+		/>
+		 
+		<MDBBtn color="primary" onClick = {() => {updateGraph(this)}} >Apply Dates</MDBBtn>
+		
+		Loading...
 		
 	  </header>	  
     
-	</div>);
-	}
+	</div>
+	
+    );}
 	for (var i in hits) {
         hits[i].user = "temp";
 		hits[i].date = hits[i].date.replace("00:00:00 GMT","");		
@@ -188,18 +212,31 @@ class App extends Component {
       }
     ],
 		rows: hits
-  };
+	};
+	
 	return (
       <div className="App">
+	  
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <h1>
           Money Management
         </h1>
 		{checkBudget()}
-		<p>{this.state.startDate.toString()}</p>
-		<p>{this.state.endDate.toString()}</p>
-		<input type="checkbox" id="OtherBox"  onChange={this.invert()}/> Other
+		
+		<MDBInput  defaultChecked onChange={() => {invert(this,8)}} type="checkbox" id="checkbox2" />Other
+		Start Date<DatePicker
+			selected={this.state.startDate}
+			onChange={this.handleChangeS}
+		/>
+		
+		End Date <DatePicker
+			selected={this.state.endDate}
+			onChange={this.handleChangeE}
+		/>
+		 
+		<MDBBtn color="primary" onClick = {() => {updateGraph(this)}} >Apply Dates</MDBBtn>
+		
 		<VictoryChart height = {500} width = {1000} domainPadding={{x: 0, y: 100}}>
 			<VictoryAxis 
 			sytle={{
@@ -237,15 +274,8 @@ class App extends Component {
           </VictoryStack>
 		  <VictoryLine  data={[{ x: 0, y: total+(total*0.1)}, { x: 1000, y: total+(total*0.1) }, ]}/>
 		< /VictoryChart>
-		Start Date<DatePicker
-			selected={this.state.startDate}
-			onChange={this.handleChangeS}
-		/>
 		
-		End Date <DatePicker
-			selected={this.state.endDate}
-			onChange={this.handleChangeE}
-		/>
+		
 		<div className="App-data-table">
 		<MDBDataTable striped bordered hover data={data}/>
         </div>
