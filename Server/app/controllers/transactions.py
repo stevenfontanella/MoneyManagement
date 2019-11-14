@@ -172,6 +172,26 @@ def get_cats_for_month(catVector, month, year):
 
 
 #===========================================================================
+#Get transactions for a given month and year that have category in catVector
+#===========================================================================  
+@blueprint.route("/get_cats_<int:catVector>_from_<int:month>-<int:date>-<int:year>_to_<int:month>-<int:date>-<int:year>")
+def get_cats_for_date_range(catVector,month1,date1,year1,month2,date2,year2):
+    if not(1<=month<=12 and 0<=catVector<=511 and year>=0):
+        return jsonify(list())
+
+    cats = []
+    for i in range(9):
+        if ((catVector&(2**i)) != 0):
+            cats.append(9-i)
+
+    start = date(year=year_i,month=month_i,day=day_i)
+    end = date(year=year_f,month=month_f,day=day_f)
+
+    trans = Transaction.query.filter(Transaction.date>=start).filter(end>=Transaction.date).filter(Transaction.category.in_(cats))
+    return jsonify(list(map(Transaction.serialize, trans)))
+
+
+#===========================================================================
 #Prediction Endpoint
 #===========================================================================
 @blueprint.route("/get_prediction_for_<int:month>-<int:year>")
