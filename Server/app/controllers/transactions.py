@@ -172,11 +172,11 @@ def get_cats_for_month(catVector, month, year):
 
 
 #===========================================================================
-#Get transactions for a given month and year that have category in catVector
+#Get transactions for a given date range that have category in catVector
 #===========================================================================  
-@blueprint.route("/get_cats_<int:catVector>_from_<int:month>-<int:date>-<int:year>_to_<int:month>-<int:date>-<int:year>")
-def get_cats_for_date_range(catVector,month1,date1,year1,month2,date2,year2):
-    if not(1<=month<=12 and 0<=catVector<=511 and year>=0):
+@blueprint.route("/get_cats_<int:catVector>_from_<int:month_i>-<int:date_i>-<int:year_i>_to_<int:month_f>-<int:date_f>-<int:year_f>")
+def get_cats_for_date_range(catVector,month_i,date_i,year_i,month_f,date_f,year_f):
+    if not(0<=catVector<=511):
         return jsonify(list())
 
     cats = []
