@@ -1,15 +1,15 @@
 .App {
+  background-color: #e6e6e6;
   text-align: center;
 }
 
 .App-logo {
-  height: 30vmin;
+  height: 20vmin;
   align-items: center;
 }
 
 .App-header {
-  background-color: #dbdbdb;
-  min-height: 100vh;
+  min-height: 40vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,17 +17,22 @@
   font-size: calc(10px + 2vmin);
   color: black;
 }
-
+.App-Date-Boxes{
+   float: center;
+}
+.App-CheckBoxes{
+   font-size: calc(10px + 2vmin);
+}
 .App-caution-bar {
   background-color: #ffff00;
-  height: 10vmin;
-  width: 100vmin;
+  height: 5vmin;
+  width: 100%;
 }
 
 .App-warning-bar {
   background-color: #ff0000;
-  height: 10vmin;
-  width: 100vmin;
+  height: 5vmin;
+  width: 100%;
 }
 
 .App-link {
@@ -35,7 +40,10 @@
 }
 
 .App-data-table {
-  height: 60min;
-  width: 100vmin;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: 10px;
 }

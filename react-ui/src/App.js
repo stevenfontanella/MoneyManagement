@@ -1,23 +1,25 @@
 import logo from './capital-one-logo2.png';
+
+
 import './App.css';
 //import tableData from './data.json';
 import { VictoryStack, VictoryArea , VictoryLine, VictoryChart,VictoryLegend, VictoryAxis} from 'victory';
 
 import React, { Component } from 'react';
-import { MDBBtn, MDBIcon, MDBBtnFixed, MDBBtnFixedItem } from "mdbreact";
-import { MDBInput } from 'mdbreact';
+import {MDBDataTable,MDBInput, MDBBtn, MDBIcon, MDBBtnFixed, MDBBtnFixedItem } from "mdbreact";
+
 
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 
-import { MDBDataTable} from 'mdbreact';
+
 
 const API = 'http://localhost:5000/transactions';
 
 
 var total = 0;
-var budget = 10000
+var budget = 0;
 
 function sumCat(cat,arr){
 	var sum = 0;
@@ -43,8 +45,8 @@ function sumCat(cat,arr){
 	return rollingSum;
 }
 
-function checkBudget(){
-	budget = total + (total*0.1)
+function checkBudget(obj){
+	budget = obj.helpers.budget
 	if (total >= budget){
 		return(
         <div className="App-warning-bar">
@@ -70,11 +72,18 @@ function updateGraph(obj){
       .then(response => response.json())
       .then(data => obj.setState({ hits: data, isLoading: false}));	  
   }
-  
+function setMonth(obj,num){
+	//obj.helpers.endDate = new Date();
+	obj.helpers.startDate = new Date(obj.helpers.endDate.getTime());
+	obj.helpers.startDate.setMonth(obj.helpers.startDate.getMonth() - num);
+	console.log(obj.helpers.startDate)
+	updateGraph(obj)	
+}
 function getBudget(obj){
-	var QUERY = 'get_prediction_for_' + (obj.helpers.endDate.getMonth() + 1)+'-'+ obj.helpers.endDate.getFullYear();  
-	var req = API + QUERY;  
-	fetch(req).then(budget => obj.helpers)  
+	var QUERY = '/get_prediction_for_' + (obj.helpers.endDate.getMonth() + 1)+'-'+ obj.helpers.endDate.getFullYear();  
+	var req = API + QUERY;
+	fetch(req).then(response => response.json()).then(data => obj.helpers.budget = parseInt(data))
+	
   }
   
 function invert(obj,index){
@@ -97,9 +106,6 @@ class App extends Component {
   
   componentDidMount() {
 	const REAL_QUERY = '/get_date_range_9-15-2019_to_1-31-2020';
-	const SINGLE_QUERY = '/get_month_9-2020';
-	const VECTOR_QUERY = '/get_cats_255'
-	const ALL_QUERY = '/'
 	
 	this.setState({ isLoading: true });
 	var req = API + REAL_QUERY; 
@@ -134,15 +140,16 @@ class App extends Component {
 	var catVector = 0;
 	for(var i=0;i<this.helpers.displays.length;i++){
 		if(this.helpers.displays[i]){
-			console.log(Math.pow(2,i))
 			catVector+= Math.pow(2,i);
 		}	
 	}
 	return catVector;
   }
   render() {
+	getBudget(this)
     var { hits, isLoading } = this.state;
-	var {displays} = this.helpers;
+	var {displays, budget} = this.helpers;
+	
 	var cats = ["Grocery","Merchandise","Other","Entertainment","Dining","Travel","Gas/Automotive","Insurance","Clothing"]
 	
 	
@@ -155,8 +162,57 @@ class App extends Component {
         <h1>
           Money Management
         </h1>
-		{checkBudget()}
+		{checkBudget(this)}
+		<div class="custom-control custom-checkbox custom-control-inline">
+			<input type="checkbox" class="custom-control-input" id="defaultInline1"  defaultChecked={this.helpers.displays[8]} onChange={() => {invert(this,8)}}/>
+			<label class="custom-control-label" for="defaultInline1">Grocery</label>
+		</div>
+
+
+		<div class="custom-control custom-checkbox custom-control-inline">
+			<input type="checkbox" class="custom-control-input" id="defaultInline2" defaultChecked={this.helpers.displays[7]} onChange={() => {invert(this,7)}}/>
+			<label class="custom-control-label" for="defaultInline2">Merchandise</label>
+		</div>
+
+
+		<div class="custom-control custom-checkbox custom-control-inline">
+			<input type="checkbox" class="custom-control-input" id="defaultInline3" defaultChecked={this.helpers.displays[6]} onChange={() => {invert(this,6)}}/>
+			<label class="custom-control-label" for="defaultInline3">Other</label>
+		</div>
 		
+		<div class="custom-control custom-checkbox custom-control-inline">
+			<input type="checkbox" class="custom-control-input" id="defaultInline4"  defaultChecked={this.helpers.displays[5]} onChange={() => {invert(this,5)}}/>
+			<label class="custom-control-label" for="defaultInline4">Entertainment</label>
+		</div>
+
+
+		<div class="custom-control custom-checkbox custom-control-inline">
+			<input type="checkbox" class="custom-control-input" id="defaultInline5" defaultChecked={this.helpers.displays[4]} onChange={() => {invert(this,4)}}/>
+			<label class="custom-control-label" for="defaultInline5">Dining</label>
+		</div>
+
+
+		<div class="custom-control custom-checkbox custom-control-inline">
+			<input type="checkbox" class="custom-control-input" id="defaultInline6" defaultChecked={this.helpers.displays[3]} onChange={() => {invert(this,3)}}/>
+			<label class="custom-control-label" for="defaultInline6">Travel</label>
+		</div>
+		
+		<div class="custom-control custom-checkbox custom-control-inline">
+			<input type="checkbox" class="custom-control-input" id="defaultInline7"  defaultChecked={this.helpers.displays[2]} onChange={() => {invert(this,2)}}/>
+			<label class="custom-control-label" for="defaultInline7">Gas/Automotive</label>
+		</div>
+
+
+		<div class="custom-control custom-checkbox custom-control-inline">
+			<input type="checkbox" class="custom-control-input" id="defaultInline8" defaultChecked={this.helpers.displays[1]} onChange={() => {invert(this,1)}}/>
+			<label class="custom-control-label" for="defaultInline8">Insurance</label>
+		</div>
+
+
+		<div class="custom-control custom-checkbox custom-control-inline">
+			<input type="checkbox" class="custom-control-input" id="defaultInline9" defaultChecked={this.helpers.displays[0]} onChange={() => {invert(this,0)}}/>
+			<label class="custom-control-label" for="defaultInline9">Clothing</label>
+		</div>
 		<div className="App-Date-Boxes">
 		<div className="App-Date-Boxes">
 		    Start Date<DatePicker
@@ -182,6 +238,7 @@ class App extends Component {
 	</div>
 	
     );}
+	
 	for (var i in hits) {
         hits[i].user = "temp";
 		hits[i].date = hits[i].date.replace("00:00:00 GMT","");		
@@ -236,51 +293,75 @@ class App extends Component {
 	};
 	
 	return (
-      <div className="App">
+     
+	  <div className="App">
+	   
 	  
+		
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <h1>
           Money Management
         </h1>
-		{checkBudget()}
-		
-		
-		<div className="App-Date-Boxes">
-			<div className="App-Date-Boxes">
-		    <MDBInput  {this.displays[8] ? defaultChecked: } onChange={() => {invert(this,8)}} type="checkbox" id="checkbox0" />Grocery
-			</div>
-			<div className="App-Date-Boxes">
-		    <MDBInput  defaultChecked onChange={() => {invert(this,7)}} type="checkbox" id="checkbox1" />Merchandise
-			</div>
-			<div className="App-Date-Boxes">
-		    <MDBInput  defaultChecked onChange={() => {invert(this,6)}} type="checkbox" id="checkbox2" />Other
-			</div>
-			<div className="App-Date-Boxes">
-		    <MDBInput  defaultChecked onChange={() => {invert(this,5)}} type="checkbox" id="checkbox3" />Entertainment
-			</div>
-			<div className="App-Date-Boxes">
-		    <MDBInput  defaultChecked onChange={() => {invert(this,4)}} type="checkbox" id="checkbox4" />Dining
-			</div>
+		{checkBudget(this)}
+		</header>
+		<div className="App-CheckBoxes">
+		<div class="custom-control custom-checkbox custom-control-inline">
+			<input type="checkbox" class="custom-control-input" id="defaultInline1"  defaultChecked={this.helpers.displays[8]} onChange={() => {invert(this,8)}}/>
+			<label class="custom-control-label" for="defaultInline1">Grocery</label>
 		</div>
-		<div className="App-Date-Boxes">
-			<div className="App-Date-Boxes">
-		    <MDBInput  defaultChecked onChange={() => {invert(this,3)}} type="checkbox" id="checkbox5" />Travel
-			</div>
-			<div className="App-Date-Boxes">
-		    <MDBInput  defaultChecked onChange={() => {invert(this,2)}} type="checkbox" id="checkbox6" />Gas/Automotive
-			</div>
-			<div className="App-Date-Boxes">
-		    <MDBInput  defaultChecked onChange={() => {invert(this,1)}} type="checkbox" id="checkbox7" />Insurance
-			</div>
-			<div className="App-Date-Boxes">
-		    <MDBInput  defaultChecked onChange={() => {invert(this,0)}} type="checkbox" id="checkbox8" />Clothing
-			</div>
+
+
+		<div class="custom-control custom-checkbox custom-control-inline">
+			<input type="checkbox" class="custom-control-input" id="defaultInline2" defaultChecked={this.helpers.displays[7]} onChange={() => {invert(this,7)}}/>
+			<label class="custom-control-label" for="defaultInline2">Merchandise</label>
+		</div>
+
+
+		<div class="custom-control custom-checkbox custom-control-inline">
+			<input type="checkbox" class="custom-control-input" id="defaultInline3" defaultChecked={this.helpers.displays[6]} onChange={() => {invert(this,6)}}/>
+			<label class="custom-control-label" for="defaultInline3">Other</label>
 		</div>
 		
+		<div class="custom-control custom-checkbox custom-control-inline">
+			<input type="checkbox" class="custom-control-input" id="defaultInline4"  defaultChecked={this.helpers.displays[5]} onChange={() => {invert(this,5)}}/>
+			<label class="custom-control-label" for="defaultInline4">Entertainment</label>
+		</div>
+
+
+		<div class="custom-control custom-checkbox custom-control-inline">
+			<input type="checkbox" class="custom-control-input" id="defaultInline5" defaultChecked={this.helpers.displays[4]} onChange={() => {invert(this,4)}}/>
+			<label class="custom-control-label" for="defaultInline5">Dining</label>
+		</div>
+
+
+		<div class="custom-control custom-checkbox custom-control-inline">
+			<input type="checkbox" class="custom-control-input" id="defaultInline6" defaultChecked={this.helpers.displays[3]} onChange={() => {invert(this,3)}}/>
+			<label class="custom-control-label" for="defaultInline6">Travel</label>
+		</div>
+		
+		<div class="custom-control custom-checkbox custom-control-inline">
+			<input type="checkbox" class="custom-control-input" id="defaultInline7"  defaultChecked={this.helpers.displays[2]} onChange={() => {invert(this,2)}}/>
+			<label class="custom-control-label" for="defaultInline7">Gas/Automotive</label>
+		</div>
+
+
+		<div class="custom-control custom-checkbox custom-control-inline">
+			<input  type="checkbox" class="custom-control-input" id="defaultInline8" defaultChecked={this.helpers.displays[1]} onChange={() => {invert(this,1)}}/>
+			<label class="custom-control-label" for="defaultInline8">Insurance</label>
+		</div>
+
+
+		<div class="custom-control custom-checkbox custom-control-inline">
+			<input size = "lg" type="checkbox" class="custom-control-input" id="defaultInline9" defaultChecked={this.helpers.displays[0]} onChange={() => {invert(this,0)}}/>
+			<label class="custom-control-label" for="defaultInline9">Clothing</label>
+		</div>
+		</div>
+		
+		
 		<div className="App-Date-Boxes">
 		<div className="App-Date-Boxes">
-		    Start Date<DatePicker
+		    Start Date <DatePicker
 			    selected={this.helpers.startDate}
 			    onChange={this.handleChangeS}
 		/>
@@ -293,13 +374,15 @@ class App extends Component {
 		     />
 		</div>
 		</div>
-		<MDBBtn color="primary" onClick = {() => {updateGraph(this)}} >Apply Dates</MDBBtn>
 		
-		<VictoryChart height = {500} width = {1000} domainPadding={{x: 0, y: 100}}>
-			<VictoryAxis 
-			sytle={{
-				
-				  }} 
+		<MDBBtn color="primary" onClick = {() => {updateGraph(this)}} >Apply Filters</MDBBtn>
+		<div>
+		<MDBBtn color="primary" onClick = {() => {setMonth(this,1)}} >One Month</MDBBtn>
+		<MDBBtn color="primary" onClick = {() => {setMonth(this,3)}} >Three Months</MDBBtn>
+		<MDBBtn color="primary" onClick = {() => {setMonth(this,6)}} >Six Months</MDBBtn>
+		</div>
+		<VictoryChart style = {{parent: {border: "10px solid #ccc"}}} height = {500} width = {1000} domainPadding={{x: 0, y: 100}}>
+			<VictoryAxis  
 			fixLabelOverlap={true}/>
 			<VictoryAxis sytle={{grid:{stroke:"grey"}}} dependentAxis/>
 			<VictoryLegend x={100} y={175}
@@ -319,7 +402,7 @@ class App extends Component {
 					{ name: "Other", symbol: { fill: "blue" } }
 				]}
 			/>
-          <VictoryStack colorScale={["red","pink","green","purple","black","grey","yellow","tomato", "blue"]}>
+          <VictoryStack height = {250} width = {500} colorScale={["red","pink","green","purple","black","grey","yellow","tomato", "blue"]}>
 			{this.writeArea("Grocery")}
 			{this.writeArea("Merchandise")}
 			{this.writeArea("Entertainment")}
@@ -330,15 +413,14 @@ class App extends Component {
 			{this.writeArea("Clothing")}
 			{this.writeArea("Other")}			
           </VictoryStack>
-		  <VictoryLine  data={[{ x: 0, y: total+(total*0.1)}, { x: 1000, y: total+(total*0.1) }, ]}/>
+		  <VictoryLine  data={[{ x: 0, y: budget}, { x: 1000, y: budget }, ]}/>
 		< /VictoryChart>
 		
-		
 		<div className="App-data-table">
-		<MDBDataTable striped bordered hover data={data}/>
+			<MDBDataTable striped bordered hover data={data}/>
         </div>
 		
-	  </header>	  
+	    
     
 	</div>
 	
