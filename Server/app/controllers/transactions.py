@@ -4,6 +4,9 @@ from flask import g, Blueprint, flash, url_for, session
 from app.models.transaction import Transaction
 from datetime import date
 
+#from app.Predict import prophetmodel as pm
+#Prophet = pm.ProphetModel()
+
 blueprint = Blueprint('transactions', __name__, url_prefix='/transactions')
 
 #===========================================================================
@@ -75,7 +78,7 @@ def get_cats(catVector):
 def get_date(month, day, year):
     if not(1<=month<=12):
         return jsonify(list())
-    if (not(1<=day<=28) and (month == 2)):
+    if (not(1<=day<=29) and (month == 2)):
         return jsonify(list())
     if (not(1<=day<=30) and (month in {4,6,9,11})):
         return jsonify(list())
@@ -113,7 +116,7 @@ def get_month(month, year):
 
     start = date(year=year,month=month,day=1)
     if (month==2):
-        day = 28
+        day = 29
     elif (month in {4,6,9,11}):
         day = 30
     else:
@@ -134,7 +137,7 @@ def get_cat_for_month(cat_id, month, year):
 
     start = date(year=year,month=month,day=1)
     if (month==2):
-        day = 28
+        day = 29
     elif (month in {4,6,9,11}):
         day = 30
     else:
@@ -160,7 +163,7 @@ def get_cats_for_month(catVector, month, year):
 
     start = date(year=year,month=month,day=1)
     if (month==2):
-        day = 28
+        day = 29
     elif (month in {4,6,9,11}):
         day = 30
     else:
@@ -196,5 +199,7 @@ def get_cats_for_date_range(catVector,month_i,date_i,year_i,month_f,date_f,year_
 #===========================================================================
 @blueprint.route("/get_prediction_for_<int:month>-<int:year>")
 def get_prediction(month, year):
+    #time = date(year=year,month=month,day=1)
+    #return Prophet.predict(time)
     pass
 
