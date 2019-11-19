@@ -3,12 +3,12 @@ from datetime import datetime as dt
 from fbprophet import Prophet
 import pandas as pd
 
-def days_in_month(month: dt):
+def days_in_month(month):
     last_month = month.replace(month=month.month-1)
     return (month.date() - last_month.date()).days
 
 class ProphetModel():
-    def __init__(self, df: pd.DataFrame):
+    def __init__(self, df):
         '''
         df - DataFrame with columns named 'y' and 'ds'
         '''
@@ -17,7 +17,7 @@ class ProphetModel():
         self.prophet.fit(df)
         self.df = df
 
-    def predict(self, month: dt):
+    def predict(self, month):
         '''
         month - datetime of the first of the month to predict
         return - predicted spending for that month

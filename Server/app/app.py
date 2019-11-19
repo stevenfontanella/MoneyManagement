@@ -10,6 +10,7 @@ project_dir = os.path.dirname(os.path.abspath(__file__))
 def create_app(config_object=settings):
     # create and configure the app
     app = Flask(__name__, instance_relative_config=True)
+    CORS(app)
     app.config.from_object(config_object)
 
     register_extensions(app)
