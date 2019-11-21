@@ -2,10 +2,18 @@
 from flask import redirect, render_template, request, jsonify
 from flask import g, Blueprint, flash, url_for, session
 from app.models.transaction import Transaction
+import datetime
 from datetime import date
 
-#from app.Predict import prophetmodel as pm
-#Prophet = pm.ProphetModel()
+from app.Predict import prophetmodel as pm
+import pandas as pd
+from datetime import datetime as dt
+'''
+data = pd.read_csv("/home/cameron/MoneyManagement/Server/app/Predict/data.csv").rename({"Price":"y", "Date":"ds"}, axis=1)
+data.ds = data.ds.apply(lambda d: dt.strptime(d, "%Y-%m-%d"))
+Prophet = pm.ProphetModel(data)
+'''
+p = pm.init_Prophet()
 
 blueprint = Blueprint('transactions', __name__, url_prefix='/transactions')
 
@@ -197,9 +205,8 @@ def get_cats_for_date_range(catVector,month_i,date_i,year_i,month_f,date_f,year_
 #===========================================================================
 #Prediction Endpoint
 #===========================================================================
-@blueprint.route("/get_prediction_for_<int:month>-<int:year>")
+@blueprint.route("/get_prediction_<int:month>-<int:year>")
 def get_prediction(month, year):
-    #time = date(year=year,month=month,day=1)
-    #return Prophet.predict(time)
-    pass
-
+    time = date(year=year,month=month,day=1)
+    time =dt.combine(time, dt.min.time())
+    return str(p.predict(time))
