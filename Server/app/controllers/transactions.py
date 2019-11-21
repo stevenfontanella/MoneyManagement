@@ -195,8 +195,8 @@ def get_cats_for_date_range(catVector,month_i,date_i,year_i,month_f,date_f,year_
         if ((catVector&(2**i)) != 0):
             cats.append(9-i)
 
-    start = date(year=year_i,month=month_i,day=day_i)
-    end = date(year=year_f,month=month_f,day=day_f)
+    start = date(year=year_i,month=month_i,day=date_i)
+    end = date(year=year_f,month=month_f,day=date_f)
 
     trans = Transaction.query.filter(Transaction.date>=start).filter(end>=Transaction.date).filter(Transaction.category.in_(cats))
     return jsonify(list(map(Transaction.serialize, trans)))
@@ -205,7 +205,7 @@ def get_cats_for_date_range(catVector,month_i,date_i,year_i,month_f,date_f,year_
 #===========================================================================
 #Prediction Endpoint
 #===========================================================================
-@blueprint.route("/get_prediction_<int:month>-<int:year>")
+@blueprint.route("/get_prediction_for_<int:month>-<int:year>")
 def get_prediction(month, year):
     time = date(year=year,month=month,day=1)
     time =dt.combine(time, dt.min.time())
