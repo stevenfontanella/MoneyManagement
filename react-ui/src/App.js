@@ -18,7 +18,6 @@ const API = 'http://localhost:5000/transactions';
 
 
 var total = 0;
-var budget = 0;
 
 function sumCat(obj,cat,arr){
 	var sum = 0;
@@ -41,7 +40,8 @@ function sumCat(obj,cat,arr){
 			}
 		}		
 	}
-	if(obj.helpers.showBudget && arr.length != 0){
+	var now = new Date();
+	if(obj.helpers.showBudget && arr.length != 0 && now <= obj.helpers.endDate){
 		
 		obj.helpers.endDate = new Date(arr[arr.length-1].date);
 		
@@ -56,24 +56,32 @@ function sumCat(obj,cat,arr){
 
 function checkBudget(obj){
 	if(obj.helpers.showBudget){
-	budget = obj.helpers.budget
+	var budget = obj.helpers.budget
+	console.log("in check" + budget)
 	var now = new Date();
 	var finalDay = new Date(obj.helpers.startDate.getFullYear(),obj.helpers.startDate.getMonth()+1,0);
 	var totalDays = finalDay.getDate()
-	console.log(totalDays)
 	
 	if (total >= budget){
 		return(
+		
         <div className="App-warning-bar">
-          <p>WARNING: OVER MONTHLY LIMIT</p>
-		  <p>Spent ${total-budget} more than your predicted budget</p>
-        </div>)
-    }else if (total/budget > now.getDate()/totalDays){
+          <p>WARNING: OVER MONTHLY LIMIT <br></br> Spent ${(total-budget).toFixed(2)} more than your predicted budget of ${budget.toFixed(2)}</p>
+        </div>
+		
+		)
+		
+    }else if (total/budget > now.getDate()/totalDays && now < obj.helpers.endDate && now > obj.helpers.startDate){
 		return(
 			<div className="App-caution-bar">
-				<p>CAUTION: On Track to Pass Budget</p>
+				<p>CAUTION: On Track to Exceed Budget <br></br>Your budget this month is ${budget.toFixed(2)}, and current spending is ${total.toFixed(2)}</p>
 			</div>)	
 	}
+	return(
+		<div className="App-green-Bar">
+			<p>Currently Projected to be Under Budget this month :) <br></br>Your budget this month is ${budget.toFixed(2)}, and current spending is ${total.toFixed(2)}</p>
+		</div>
+	)
 	}
 	
 }
@@ -100,13 +108,8 @@ function getBudget(obj){
 	var QUERY = '/get_prediction_for_' + (obj.helpers.startDate.getMonth() + 1)+'-'+ obj.helpers.startDate.getFullYear();  
 	var req = API + QUERY;
 	obj.setState({ budgetLoading: true });
-	fetch(req).then(response => response.json()).then(data => obj.helpers.budget = parseInt(data)).then(() => obj.setState({ budgetLoading: false }))
-	/*const request = async () => {
-		const response = await fetch(req);
-		const json = await response.json();
-		obj.helpers.budget = parseInt(json);
-	}
-	request();*/
+	fetch(req).then(response => response.json()).then(data => obj.helpers.budget = parseInt(data)).then(() => obj.setState({ budgetLoading: false }))//.then(() => obj.helpers.budget = 600);
+	
 	
   }
 function writeBudget(obj){
@@ -116,21 +119,43 @@ function writeBudget(obj){
 }
 
 function thisMonth(obj){
-	getBudget(obj)
 	var startDate = new Date();
 	obj.helpers.displays = [true,true,true,true,true,true,true,true,true];
 	startDate.setDate(1);
 	var endDate = new Date(startDate.getFullYear(),startDate.getMonth()+1,0);
+	
 	obj.helpers.startDate = startDate;
 	obj.helpers.endDate = endDate;
 	obj.helpers.showBudget = true;
+	
+	getBudget(obj)
+	//obj.helpers.budget = 500;	
 	updateGraph(obj);
 }
-  
+function budgetGivenMonth(obj){
+	var startDate = new Date(obj.helpers.startDate.getFullYear(),obj.helpers.startDate.getMonth(),1);
+	obj.helpers.displays = [true,true,true,true,true,true,true,true,true];
+	var endDate = new Date(startDate.getFullYear(),startDate.getMonth()+1,0);
+	
+	getBudget(obj)
+	//obj.helpers.budget = 500;
+	console.log(startDate)
+	console.log(endDate)
+	obj.helpers.startDate = startDate;
+	obj.helpers.endDate = endDate;
+	obj.helpers.showBudget = true;
+	updateGraph(obj); 
+	 
+	 
+ }
 function invert(obj,index){
 	obj.helpers.displays[index]=!obj.helpers.displays[index]
   }
-  
+function applyFilters(obj){
+	obj.helpers.showBudget = false;
+	updateGraph(obj)
+	
+}
 class App extends Component {
   constructor(props) {
     super(props);
@@ -151,17 +176,7 @@ class App extends Component {
   
   componentDidMount() {
 	thisMonth(this);
-	/*
-	setMonth(this,1)
-	var catVector = this.generateCatVector();
-	 
-	var QUERY = '/get_cats_'+ catVector +'_from_' + (this.helpers.startDate.getMonth() + 1) +'-'+ this.helpers.startDate.getDate() +'-'+this.helpers.startDate.getFullYear() + '_to_' + (this.helpers.endDate.getMonth()+1) +'-'+ this.helpers.endDate.getDate() +'-'+ this.helpers.endDate.getFullYear();
-	 
-	this.setState({ isLoading: true });
-	var req = API + QUERY; 
-    fetch(req)
-      .then(response => response.json())
-      .then(data => this.setState({ hits: data , isLoading: false }));*/
+	
   }
   
 
@@ -223,7 +238,8 @@ class App extends Component {
 	
 	for (var i in hits) {
         hits[i].user = "temp";
-		hits[i].date = hits[i].date.replace("00:00:00 GMT","");		
+		hits[i].date = hits[i].date.replace("00:00:00 GMT","");	
+		//hits[i].amount = hits[i].amount.toFixed(2);
      }
 	var rollingSumAll = sumCat(this,"all",hits);
 	var data = {
@@ -246,18 +262,6 @@ class App extends Component {
         sort: 'asc',
         width: 250
       },
-    //  {
-    //    label: 'ID',
-    //    field: 'id',
-    //    sort: 'asc',
-    //    width: 75
-    //  },
-     // {
-     //   label: 'User',
-     //   field: 'user',
-     //   sort: 'asc',
-     //   width: 50
-     // },
       {
         label: 'Location',
         field: 'vendorLocation',
@@ -273,7 +277,7 @@ class App extends Component {
     ],
 		rows: hits
 	};
-	console.log(budgetLoading)
+	
 	return (
      
 	  <div className="App">
@@ -290,6 +294,7 @@ class App extends Component {
 		</div>
 		
 		{checkBudget(this)}
+		<div className="App-spacer"> </div>
 		</header>
 		<div className="App-CheckBoxes">
 		<div class="custom-control custom-checkbox custom-control-inline">
@@ -362,18 +367,33 @@ class App extends Component {
 		</div>
 		</div>
 		
-		<MDBBtn color="primary" onClick = {() => {updateGraph(this)}} >Apply Filters</MDBBtn>
+		<MDBBtn color="primary" onClick = {() => {applyFilters(this)}} >Apply Filters</MDBBtn>
 		<div>
 		<MDBBtn color="indigo" onClick = {() => {setMonth(this,1)}} >One Month</MDBBtn>
 		<MDBBtn color="red" onClick = {() => {setMonth(this,3)}} >Three Months</MDBBtn>
 		<MDBBtn color="blue" onClick = {() => {setMonth(this,6)}} >Six Months</MDBBtn>
 		</div>
 		<MDBBtn color="primary" onClick = {() => {thisMonth(this)}} >This Month w/Prediction</MDBBtn>
-		<VictoryChart style = {{parent: {border: "10px solid #ccc"}}} height = {500} width = {1000} domainPadding={{x: 0, y: 100}}>
+		<MDBBtn color="primary" onClick = {() => {budgetGivenMonth(this)}} >Past Month w/Prediction*</MDBBtn>
+		<p>*Month is Selected Using Start Date</p>
+		<VictoryChart style = {{parent: {border: "10px solid #ccc"}}} height = {500} width = {1500} domainPadding={{x: 0, y: 100}}>
 			<VictoryAxis  
 			fixLabelOverlap={true}/>
 			<VictoryAxis sytle={{grid:{stroke:"grey"}}} dependentAxis/>
-			<VictoryLegend x={65} y={175}
+			
+          <VictoryStack height = {250} width = {500} colorScale={["red","pink","green","purple","black","grey","yellow","tomato", "blue"]}>
+			{this.writeArea("Grocery")}
+			{this.writeArea("Merchandise")}
+			{this.writeArea("Entertainment")}
+			{this.writeArea("Dining")}
+			{this.writeArea("Travel")}
+			{this.writeArea("Gas/Automotive")}
+			{this.writeArea("Insurance")}
+			{this.writeArea("Clothing")}
+			{this.writeArea("Other")}			
+          </VictoryStack>
+		  {writeBudget(this)}
+		  <VictoryLegend x={65} y={175}
 				itemsPerRow={2}
 				orientation="horizontal"
 				gutter={20}
@@ -390,18 +410,6 @@ class App extends Component {
 					{ name: "Other", symbol: { fill: "blue" } }
 				]}
 			/>
-          <VictoryStack height = {250} width = {500} colorScale={["red","pink","green","purple","black","grey","yellow","tomato", "blue"]}>
-			{this.writeArea("Grocery")}
-			{this.writeArea("Merchandise")}
-			{this.writeArea("Entertainment")}
-			{this.writeArea("Dining")}
-			{this.writeArea("Travel")}
-			{this.writeArea("Gas/Automotive")}
-			{this.writeArea("Insurance")}
-			{this.writeArea("Clothing")}
-			{this.writeArea("Other")}			
-          </VictoryStack>
-		  {writeBudget(this)}
 		< /VictoryChart>
 		
 		

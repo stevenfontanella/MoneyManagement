@@ -22,6 +22,10 @@
 	color: #004977;	
 	
 }
+.App-spacer{
+	height: 10px;
+	
+}
 .App-header {
   min-height: 25vh;
   display: flex;
@@ -42,14 +46,20 @@
 }
 .App-caution-bar {
   background-color: #ffff00;
-  height: 5vmin;
+  height: 10vmin;
   width: 100%;
 }
 
 .App-warning-bar {
   background-color: #ff0000;
-  height: 5vmin;
+  height: 10vmin;
   width: 100%;
+}
+.App-green-Bar{
+  background-color: #00b300;
+  height: 10vmin;
+  width: 100%;
+	
 }
 
 .App-link {
