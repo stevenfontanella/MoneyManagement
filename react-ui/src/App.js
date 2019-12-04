@@ -2,8 +2,7 @@ import logo from './capital-one-logo2.png';
 
 
 import './App.css';
-//import tableData from './data.json';
-import { VictoryStack, VictoryArea , VictoryLine, VictoryChart,VictoryLegend, VictoryAxis} from 'victory';
+import { VictoryStack,VictoryPie, VictoryArea , VictoryLine, VictoryChart,VictoryLegend, VictoryAxis} from 'victory';
 
 import React, { Component } from 'react';
 import {MDBDataTable,MDBInput, MDBBtn, MDBIcon, MDBBtnFixed, MDBBtnFixedItem } from "mdbreact";
@@ -21,7 +20,7 @@ const API = 'http://localhost:5000/transactions';
 var total = 0;
 var budget = 0;
 
-function sumCat(cat,arr){
+function sumCat(obj,cat,arr){
 	var sum = 0;
 	var rollingSum = [];
 	var temp = {x: 0, y:0}
@@ -41,24 +40,41 @@ function sumCat(cat,arr){
 				rollingSum.push(temp);			
 			}
 		}		
-	}	
+	}
+	if(obj.helpers.showBudget && arr.length != 0){
+		
+		obj.helpers.endDate = new Date(arr[arr.length-1].date);
+		
+		while(obj.helpers.startDate.getMonth() == obj.helpers.endDate.getMonth()){	
+		temp = { x : obj.helpers.endDate.toDateString(), y: 0};
+		rollingSum.push(temp);
+		obj.helpers.endDate.setDate(obj.helpers.endDate.getDate()+1)		
+		}
+	}
 	return rollingSum;
 }
 
 function checkBudget(obj){
+	if(obj.helpers.showBudget){
 	budget = obj.helpers.budget
+	var now = new Date();
+	var finalDay = new Date(obj.helpers.startDate.getFullYear(),obj.helpers.startDate.getMonth()+1,0);
+	var totalDays = finalDay.getDate()
+	console.log(totalDays)
+	
 	if (total >= budget){
 		return(
         <div className="App-warning-bar">
           <p>WARNING: OVER MONTHLY LIMIT</p>
+		  <p>Spent ${total-budget} more than your predicted budget</p>
         </div>)
-    }else if ((budget-total) <= (budget*0.1)){
+    }else if (total/budget > now.getDate()/totalDays){
 		return(
 			<div className="App-caution-bar">
-				<p>CAUTION: CLOSE TO MONTHLY LIMIT</p>
+				<p>CAUTION: On Track to Pass Budget</p>
 			</div>)	
 	}
-	
+	}
 	
 }
 function updateGraph(obj){
@@ -68,6 +84,7 @@ function updateGraph(obj){
 	 
 	 var QUERY = '/get_cats_'+ catVector +'_from_' + (obj.helpers.startDate.getMonth() + 1) +'-'+ obj.helpers.startDate.getDate() +'-'+obj.helpers.startDate.getFullYear() + '_to_' + (obj.helpers.endDate.getMonth()+1) +'-'+ obj.helpers.endDate.getDate() +'-'+ obj.helpers.endDate.getFullYear();
 	 var req = API + QUERY; 
+	 
 	 fetch(req)
       .then(response => response.json())
       .then(data => obj.setState({ hits: data, isLoading: false}));	  
@@ -76,15 +93,39 @@ function setMonth(obj,num){
 	//obj.helpers.endDate = new Date();
 	obj.helpers.startDate = new Date(obj.helpers.endDate.getTime());
 	obj.helpers.startDate.setMonth(obj.helpers.startDate.getMonth() - num);
-	console.log(obj.helpers.startDate)
+	obj.helpers.showBudget = false;
 	updateGraph(obj)	
 }
 function getBudget(obj){
-	var QUERY = '/get_prediction_for_' + (obj.helpers.endDate.getMonth() + 1)+'-'+ obj.helpers.endDate.getFullYear();  
+	var QUERY = '/get_prediction_for_' + (obj.helpers.startDate.getMonth() + 1)+'-'+ obj.helpers.startDate.getFullYear();  
 	var req = API + QUERY;
-	fetch(req).then(response => response.json()).then(data => obj.helpers.budget = parseInt(data))
+	obj.setState({ budgetLoading: true });
+	fetch(req).then(response => response.json()).then(data => obj.helpers.budget = parseInt(data)).then(() => obj.setState({ budgetLoading: false }))
+	/*const request = async () => {
+		const response = await fetch(req);
+		const json = await response.json();
+		obj.helpers.budget = parseInt(json);
+	}
+	request();*/
 	
   }
+function writeBudget(obj){
+	if(obj.helpers.showBudget){
+		return (<VictoryLine  data={[{ x: 0, y: obj.helpers.budget}, { x: 10000, y: obj.helpers.budget }, ]}/>)
+	}
+}
+
+function thisMonth(obj){
+	getBudget(obj)
+	var startDate = new Date();
+	obj.helpers.displays = [true,true,true,true,true,true,true,true,true];
+	startDate.setDate(1);
+	var endDate = new Date(startDate.getFullYear(),startDate.getMonth()+1,0);
+	obj.helpers.startDate = startDate;
+	obj.helpers.endDate = endDate;
+	obj.helpers.showBudget = true;
+	updateGraph(obj);
+}
   
 function invert(obj,index){
 	obj.helpers.displays[index]=!obj.helpers.displays[index]
@@ -96,29 +137,38 @@ class App extends Component {
 	this.helpers = {
 		displays: [true,true,true,true,true,true,true,true,true],
 		budget: 0,
+		catSums: [],
+		showBudget: true,
 		startDate: new Date(),
 		endDate: new Date()};
+		
     this.state = {
       hits: [],
-	  isLoading: false
+	  isLoading: false,
+	  budgetLoading:false
     };
   }
   
   componentDidMount() {
-	const REAL_QUERY = '/get_date_range_9-15-2019_to_1-31-2020';
-	
+	thisMonth(this);
+	/*
+	setMonth(this,1)
+	var catVector = this.generateCatVector();
+	 
+	var QUERY = '/get_cats_'+ catVector +'_from_' + (this.helpers.startDate.getMonth() + 1) +'-'+ this.helpers.startDate.getDate() +'-'+this.helpers.startDate.getFullYear() + '_to_' + (this.helpers.endDate.getMonth()+1) +'-'+ this.helpers.endDate.getDate() +'-'+ this.helpers.endDate.getFullYear();
+	 
 	this.setState({ isLoading: true });
-	var req = API + REAL_QUERY; 
+	var req = API + QUERY; 
     fetch(req)
       .then(response => response.json())
-      .then(data => this.setState({ hits: data , isLoading: false }));
+      .then(data => this.setState({ hits: data , isLoading: false }));*/
   }
   
 
   
    
   writeArea(cat){
-	var rollingSum = sumCat(cat,this.state.hits);
+	var rollingSum = sumCat(this,cat,this.state.hits);
 	return (<VictoryArea
               data={rollingSum}
 			  labels={({ data, index }) => index == data.length - 1 ? " " : ""}
@@ -146,15 +196,15 @@ class App extends Component {
 	return catVector;
   }
   render() {
-	getBudget(this)
-    var { hits, isLoading } = this.state;
-	var {displays, budget} = this.helpers;
+	
+    var { hits, isLoading, budgetLoading } = this.state;
+	var {displays, budget ,catSums} = this.helpers;
 	
 	var cats = ["Grocery","Merchandise","Other","Entertainment","Dining","Travel","Gas/Automotive","Insurance","Clothing"]
 	
 	
-	if (isLoading) {
-	return ( <div className="App">
+	if (isLoading || budgetLoading) {
+	return ( <div className="App-Loading">
 	
 	  
       <header className="App-header">
@@ -162,75 +212,7 @@ class App extends Component {
         <h1>
           Money Management
         </h1>
-		{checkBudget(this)}
-		<div class="custom-control custom-checkbox custom-control-inline">
-			<input type="checkbox" class="custom-control-input" id="defaultInline1"  defaultChecked={this.helpers.displays[8]} onChange={() => {invert(this,8)}}/>
-			<label class="custom-control-label" for="defaultInline1">Grocery</label>
-		</div>
-
-
-		<div class="custom-control custom-checkbox custom-control-inline">
-			<input type="checkbox" class="custom-control-input" id="defaultInline2" defaultChecked={this.helpers.displays[7]} onChange={() => {invert(this,7)}}/>
-			<label class="custom-control-label" for="defaultInline2">Merchandise</label>
-		</div>
-
-
-		<div class="custom-control custom-checkbox custom-control-inline">
-			<input type="checkbox" class="custom-control-input" id="defaultInline3" defaultChecked={this.helpers.displays[6]} onChange={() => {invert(this,6)}}/>
-			<label class="custom-control-label" for="defaultInline3">Other</label>
-		</div>
-		
-		<div class="custom-control custom-checkbox custom-control-inline">
-			<input type="checkbox" class="custom-control-input" id="defaultInline4"  defaultChecked={this.helpers.displays[5]} onChange={() => {invert(this,5)}}/>
-			<label class="custom-control-label" for="defaultInline4">Entertainment</label>
-		</div>
-
-
-		<div class="custom-control custom-checkbox custom-control-inline">
-			<input type="checkbox" class="custom-control-input" id="defaultInline5" defaultChecked={this.helpers.displays[4]} onChange={() => {invert(this,4)}}/>
-			<label class="custom-control-label" for="defaultInline5">Dining</label>
-		</div>
-
-
-		<div class="custom-control custom-checkbox custom-control-inline">
-			<input type="checkbox" class="custom-control-input" id="defaultInline6" defaultChecked={this.helpers.displays[3]} onChange={() => {invert(this,3)}}/>
-			<label class="custom-control-label" for="defaultInline6">Travel</label>
-		</div>
-		
-		<div class="custom-control custom-checkbox custom-control-inline">
-			<input type="checkbox" class="custom-control-input" id="defaultInline7"  defaultChecked={this.helpers.displays[2]} onChange={() => {invert(this,2)}}/>
-			<label class="custom-control-label" for="defaultInline7">Gas/Automotive</label>
-		</div>
-
-
-		<div class="custom-control custom-checkbox custom-control-inline">
-			<input type="checkbox" class="custom-control-input" id="defaultInline8" defaultChecked={this.helpers.displays[1]} onChange={() => {invert(this,1)}}/>
-			<label class="custom-control-label" for="defaultInline8">Insurance</label>
-		</div>
-
-
-		<div class="custom-control custom-checkbox custom-control-inline">
-			<input type="checkbox" class="custom-control-input" id="defaultInline9" defaultChecked={this.helpers.displays[0]} onChange={() => {invert(this,0)}}/>
-			<label class="custom-control-label" for="defaultInline9">Clothing</label>
-		</div>
-		<div className="App-Date-Boxes">
-		<div className="App-Date-Boxes">
-		    Start Date<DatePicker
-			    selected={this.helpers.startDate}
-			    onChange={this.handleChangeS}
-		/>
-		</div>
-		
-		<div className="App-Date-Boxes">
-		    End Date <DatePicker
-			  selected={this.helpers.endDate}
-			  onChange={this.handleChangeE}
-		     />
-		</div>
-		</div>
-		 
-		<MDBBtn color="primary" onClick = {() => {updateGraph(this)}} >Apply Dates</MDBBtn>
-		
+						
 		Loading...
 		
 	  </header>	  
@@ -243,7 +225,7 @@ class App extends Component {
         hits[i].user = "temp";
 		hits[i].date = hits[i].date.replace("00:00:00 GMT","");		
      }
-	var rollingSumAll = sumCat("all",hits);
+	var rollingSumAll = sumCat(this,"all",hits);
 	var data = {
 		columns: [
       {
@@ -291,7 +273,7 @@ class App extends Component {
     ],
 		rows: hits
 	};
-	
+	console.log(budgetLoading)
 	return (
      
 	  <div className="App">
@@ -299,10 +281,14 @@ class App extends Component {
 	  
 		
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>
-          Money Management
-        </h1>
+      
+		<div className="App-title">
+			<img src={logo} className="App-logo" alt="logo" />
+			<h1 style={{fontSize:"2.5em"}}>
+				Money Management
+			</h1>
+		</div>
+		
 		{checkBudget(this)}
 		</header>
 		<div className="App-CheckBoxes">
@@ -327,8 +313,9 @@ class App extends Component {
 			<input type="checkbox" class="custom-control-input" id="defaultInline4"  defaultChecked={this.helpers.displays[5]} onChange={() => {invert(this,5)}}/>
 			<label class="custom-control-label" for="defaultInline4">Entertainment</label>
 		</div>
-
-
+		</div>
+		<br></br>
+		<div className="App-CheckBoxes">
 		<div class="custom-control custom-checkbox custom-control-inline">
 			<input type="checkbox" class="custom-control-input" id="defaultInline5" defaultChecked={this.helpers.displays[4]} onChange={() => {invert(this,4)}}/>
 			<label class="custom-control-label" for="defaultInline5">Dining</label>
@@ -357,7 +344,7 @@ class App extends Component {
 			<label class="custom-control-label" for="defaultInline9">Clothing</label>
 		</div>
 		</div>
-		
+		<br></br>
 		
 		<div className="App-Date-Boxes">
 		<div className="App-Date-Boxes">
@@ -377,15 +364,16 @@ class App extends Component {
 		
 		<MDBBtn color="primary" onClick = {() => {updateGraph(this)}} >Apply Filters</MDBBtn>
 		<div>
-		<MDBBtn color="primary" onClick = {() => {setMonth(this,1)}} >One Month</MDBBtn>
-		<MDBBtn color="primary" onClick = {() => {setMonth(this,3)}} >Three Months</MDBBtn>
-		<MDBBtn color="primary" onClick = {() => {setMonth(this,6)}} >Six Months</MDBBtn>
+		<MDBBtn color="indigo" onClick = {() => {setMonth(this,1)}} >One Month</MDBBtn>
+		<MDBBtn color="red" onClick = {() => {setMonth(this,3)}} >Three Months</MDBBtn>
+		<MDBBtn color="blue" onClick = {() => {setMonth(this,6)}} >Six Months</MDBBtn>
 		</div>
+		<MDBBtn color="primary" onClick = {() => {thisMonth(this)}} >This Month w/Prediction</MDBBtn>
 		<VictoryChart style = {{parent: {border: "10px solid #ccc"}}} height = {500} width = {1000} domainPadding={{x: 0, y: 100}}>
 			<VictoryAxis  
 			fixLabelOverlap={true}/>
 			<VictoryAxis sytle={{grid:{stroke:"grey"}}} dependentAxis/>
-			<VictoryLegend x={100} y={175}
+			<VictoryLegend x={65} y={175}
 				itemsPerRow={2}
 				orientation="horizontal"
 				gutter={20}
@@ -413,8 +401,11 @@ class App extends Component {
 			{this.writeArea("Clothing")}
 			{this.writeArea("Other")}			
           </VictoryStack>
-		  <VictoryLine  data={[{ x: 0, y: budget}, { x: 1000, y: budget }, ]}/>
+		  {writeBudget(this)}
 		< /VictoryChart>
+		
+		
+		
 		
 		<div className="App-data-table">
 			<MDBDataTable striped bordered hover data={data}/>
