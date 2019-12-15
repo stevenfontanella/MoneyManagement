@@ -83,6 +83,10 @@ function checkBudget(obj){
 		</div>
 	)
 	}
+	return(
+		<div className="App-status-Bar">
+			<p>Spending for this period was ${total.toFixed(2)}</p>
+		</div>)
 	
 }
 function updateGraph(obj){
@@ -108,7 +112,7 @@ function getBudget(obj){
 	var QUERY = '/get_prediction_for_' + (obj.helpers.startDate.getMonth() + 1)+'-'+ obj.helpers.startDate.getFullYear();  
 	var req = API + QUERY;
 	obj.setState({ budgetLoading: true });
-	fetch(req).then(response => response.json()).then(data => obj.helpers.budget = parseInt(data)).then(() => obj.setState({ budgetLoading: false }))//.then(() => obj.helpers.budget = 600);
+	fetch(req).then(response => response.json()).then(data => obj.helpers.budget = parseInt(data)).then(() => obj.setState({ budgetLoading: false }))
 	
 	
   }
@@ -133,7 +137,7 @@ function thisMonth(obj){
 	updateGraph(obj);
 }
 function budgetGivenMonth(obj){
-	var startDate = new Date(obj.helpers.startDate.getFullYear(),obj.helpers.startDate.getMonth(),1);
+	var startDate = new Date(obj.helpers.endDate.getFullYear(),obj.helpers.endDate.getMonth(),1);
 	obj.helpers.displays = [true,true,true,true,true,true,true,true,true];
 	var endDate = new Date(startDate.getFullYear(),startDate.getMonth()+1,0);
 	
@@ -239,13 +243,21 @@ class App extends Component {
 	for (var i in hits) {
         hits[i].user = "temp";
 		hits[i].date = hits[i].date.replace("00:00:00 GMT","");	
-		//hits[i].amount = hits[i].amount.toFixed(2);
+     }
+	var tableData = hits;
+	for (var i in tableData) {
+		try{
+		hits[i].amount = Math.round(hits[i].amount*100)/100;
+		}
+		catch(error){
+		console.log(hits[i].amount)			
+		}
      }
 	var rollingSumAll = sumCat(this,"all",hits);
 	var data = {
 		columns: [
       {
-        label: 'Amount',
+        label: 'Amount ($)',
         field: 'amount',
         sort: 'asc',
         width: 200
@@ -275,8 +287,10 @@ class App extends Component {
         width: 300
       }
     ],
-		rows: hits
+		rows: tableData
 	};
+	
+	
 	
 	return (
      
@@ -375,7 +389,7 @@ class App extends Component {
 		</div>
 		<MDBBtn color="primary" onClick = {() => {thisMonth(this)}} >This Month w/Prediction</MDBBtn>
 		<MDBBtn color="primary" onClick = {() => {budgetGivenMonth(this)}} >Past Month w/Prediction*</MDBBtn>
-		<p>*Month is Selected Using Start Date</p>
+		<p>*Month is Selected Using End Date</p>
 		<VictoryChart style = {{parent: {border: "10px solid #ccc"}}} height = {500} width = {1500} domainPadding={{x: 0, y: 100}}>
 			<VictoryAxis  
 			fixLabelOverlap={true}/>

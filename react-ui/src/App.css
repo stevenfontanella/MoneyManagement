@@ -59,9 +59,12 @@
   background-color: #00b300;
   height: 10vmin;
   width: 100%;
-	
 }
-
+.App-status-Bar{
+  background-color: #00b300;
+  height: 7vmin;
+  width: 100%;
+}
 .App-link {
   color: #ad2020;
 }
